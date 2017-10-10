@@ -148,11 +148,11 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.derassom.ar-basketball
-    Standalone: com.derassom.ar-basketball
-    Tizen: com.derassom.ar-basketball
-    iOS: com.derassom.ar-basketball
-    tvOS: com.derassom.ar-basketball
+    Android: com.derassom.ar_basketball
+    Standalone: com.derassom.ar_basketball
+    Tizen: com.derassom.ar_basketball
+    iOS: com.derassom.ar_basketball
+    tvOS: com.derassom.ar_basketball
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -247,6 +247,8 @@ PlayerSettings:
   m_BuildTargetVRSettings: []
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Standalone
+    m_Enabled: 1
+  - m_BuildTarget: Android
     m_Enabled: 1
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
