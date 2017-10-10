@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 0c86d88e99db721469bd67d623a9c997
+timeCreated: 1507652151
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: archmodels81_006_01
+    100002: archmodels81_006_02
+    100004: archmodels81_006_03
+    100006: archmodels81_006_04
+    100008: archmodels81_006_04_MeshPart0
+    100010: archmodels81_006_04_MeshPart1
+    100012: archmodels81_006_05
+    100014: archmodels81_006_06
+    100016: archmodels81_006_06_MeshPart0
+    100018: archmodels81_006_06_MeshPart1
+    100020: archmodels81_006_06_MeshPart2
+    100022: archmodels81_006_07
+    100024: archmodels81_006_08
+    100026: archmodels81_006_08_MeshPart0
+    100028: archmodels81_006_08_MeshPart1
+    100030: archmodels81_006_08_MeshPart2
+    100032: //RootNode
+    400000: archmodels81_006_01
+    400002: archmodels81_006_02
+    400004: archmodels81_006_03
+    400006: archmodels81_006_04
+    400008: archmodels81_006_04_MeshPart0
+    400010: archmodels81_006_04_MeshPart1
+    400012: archmodels81_006_05
+    400014: archmodels81_006_06
+    400016: archmodels81_006_06_MeshPart0
+    400018: archmodels81_006_06_MeshPart1
+    400020: archmodels81_006_06_MeshPart2
+    400022: archmodels81_006_07
+    400024: archmodels81_006_08
+    400026: archmodels81_006_08_MeshPart0
+    400028: archmodels81_006_08_MeshPart1
+    400030: archmodels81_006_08_MeshPart2
+    400032: //RootNode
+    2300000: archmodels81_006_01
+    2300002: archmodels81_006_02
+    2300004: archmodels81_006_03
+    2300006: archmodels81_006_04_MeshPart0
+    2300008: archmodels81_006_04_MeshPart1
+    2300010: archmodels81_006_05
+    2300012: archmodels81_006_06_MeshPart0
+    2300014: archmodels81_006_06_MeshPart1
+    2300016: archmodels81_006_06_MeshPart2
+    2300018: archmodels81_006_07
+    2300020: archmodels81_006_08_MeshPart0
+    2300022: archmodels81_006_08_MeshPart1
+    2300024: archmodels81_006_08_MeshPart2
+    3300000: archmodels81_006_01
+    3300002: archmodels81_006_02
+    3300004: archmodels81_006_03
+    3300006: archmodels81_006_04_MeshPart0
+    3300008: archmodels81_006_04_MeshPart1
+    3300010: archmodels81_006_05
+    3300012: archmodels81_006_06_MeshPart0
+    3300014: archmodels81_006_06_MeshPart1
+    3300016: archmodels81_006_06_MeshPart2
+    3300018: archmodels81_006_07
+    3300020: archmodels81_006_08_MeshPart0
+    3300022: archmodels81_006_08_MeshPart1
+    3300024: archmodels81_006_08_MeshPart2
+    4300000: archmodels81_006_01
+    4300002: archmodels81_006_02
+    4300004: archmodels81_006_03
+    4300006: archmodels81_006_04_MeshPart0
+    4300008: archmodels81_006_04_MeshPart1
+    4300010: archmodels81_006_05
+    4300012: archmodels81_006_06_MeshPart0
+    4300014: archmodels81_006_06_MeshPart1
+    4300016: archmodels81_006_06_MeshPart2
+    4300018: archmodels81_006_07
+    4300020: archmodels81_006_08_MeshPart0
+    4300022: archmodels81_006_08_MeshPart1
+    4300024: archmodels81_006_08_MeshPart2
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #0'
+    second: {fileID: 2100000, guid: 37b7d2b52cbaa5c44976bf0f532333ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #1'
+    second: {fileID: 2100000, guid: f76b1262cd3e97340b2e665c4fd8369e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: ad2668a5554e4d14a9323b12e1ee6d25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #3'
+    second: {fileID: 2100000, guid: b69ca6244f847884ead958b0ccbab89f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #4'
+    second: {fileID: 2100000, guid: 8d709a2c9cf292142b9b512dbd3fc1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #5'
+    second: {fileID: 2100000, guid: e4b1412b42aa7884b8699d0ece6416da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #6'
+    second: {fileID: 2100000, guid: f0b28ed891ab61f43a3829ba884e5b2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #7'
+    second: {fileID: 2100000, guid: 99446d47105f77b419e69dbbf2069d22, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
