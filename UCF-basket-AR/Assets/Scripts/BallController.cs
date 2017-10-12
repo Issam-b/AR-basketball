@@ -8,8 +8,8 @@ public class BallController : MonoBehaviour {
     //public float smoothSpeed = 0.125f;
     public Vector3 offset = new Vector3(0, -3, 4.5f);
 
-    private void LateUpdate()
+    void Update()
     {
-        ball.transform.position = transform.position + offset;
+        ball.transform.position = transform.position - offset;
     }
 }
