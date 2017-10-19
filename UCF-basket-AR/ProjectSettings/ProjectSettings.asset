@@ -7,7 +7,7 @@ PlayerSettings:
   productGUID: b49f24babb8520145a736c65dd50cabf
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -148,7 +148,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.derassom.ar_basketball
+    Android: com.derassom.arbasketball
     Standalone: com.derassom.ar_basketball
     Tizen: com.derassom.ar_basketball
     iOS: com.derassom.ar_basketball
@@ -527,7 +527,8 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Standalone: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: UCF-basket-AR

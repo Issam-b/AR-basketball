@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "962937894684",
+    "firebase_url": "https://ucfarbasketball.firebaseio.com",
+    "project_id": "ucfarbasketball",
+    "storage_bucket": "ucfarbasketball.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962937894684:android:4c73cc4760fa05a2",
+        "android_client_info": {
+          "package_name": "com.derassom.arbasketball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962937894684-3amt0g864sko6c4c8lco5blgj97tq4ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLlWJvnpkz_widJcEqfOCjVkOPU2ackpw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
