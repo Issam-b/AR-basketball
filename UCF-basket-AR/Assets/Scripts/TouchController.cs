@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class TouchController : MonoBehaviour {
@@ -15,7 +15,7 @@ public class TouchController : MonoBehaviour {
     private float ZaxisForce;
 
     private Vector3 RequireForce;
-    public float speed = 40;
+    public float speed = 0.5f;
 
     public Rigidbody ball;
 
@@ -24,6 +24,7 @@ public class TouchController : MonoBehaviour {
     public Text timeText, ballCountText;
     private float startTime = 0f, temp;
     string minutes, seconds;
+    public Transform imageTarget;
 
     private int ballCount = 0;
 
@@ -40,7 +41,7 @@ public class TouchController : MonoBehaviour {
             minutes = ((int)temp / 60).ToString();
             seconds = (temp % 60).ToString("f2");
 
-            timeText.text = "Elapsed time: " + minutes + "." + seconds;
+            timeText.text = "Time: " + minutes + "." + seconds;
             ballCountText.text = "Throws: " + ballCount.ToString();
         }
     }
@@ -69,15 +70,16 @@ public class TouchController : MonoBehaviour {
 
     private void BallThrow ()
     {
-        XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
-        YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
-        ZaxisForce = (FinalTouchTime - InitialTouchTime);
+            XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
+            YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
+            ZaxisForce = (FinalTouchTime - InitialTouchTime);
 
-        //RequireForce = new Vector3(XaxisForce / 7, YaxisForce / 7, ZaxisForce * 110f);
-        ball.useGravity = true;
-        ball.isKinematic = false;
-        ball.AddForce(new Vector3(XaxisForce / 7, YaxisForce / 7, ZaxisForce * 110f) * speed);
-        ball.AddTorque(new Vector3(XaxisForce * 50f, YaxisForce * 1f, ZaxisForce * 30f) * speed);
-        canSwipe = false;
+            //RequireForce = new Vector3(XaxisForce / 7, YaxisForce / 7, ZaxisForce * 110f);
+            ball.useGravity = true;
+            ball.isKinematic = false;
+            ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
+            ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, ZaxisForce * 4.3f) * speed);
+            canSwipe = false;
+            ball.transform.SetParent(imageTarget, true);
     }
 }

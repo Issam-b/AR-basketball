@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://ucfarbasketball.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">962937894684</string>
+  <string name="google_storage_bucket" translatable="false">ucfarbasketball.appspot.com</string>
+  <string name="project_id" translatable="false">ucfarbasketball</string>
+  <string name="google_api_key" translatable="false">AIzaSyBLlWJvnpkz_widJcEqfOCjVkOPU2ackpw</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBLlWJvnpkz_widJcEqfOCjVkOPU2ackpw</string>
+  <string name="google_app_id" translatable="false">1:962937894684:android:4c73cc4760fa05a2</string>
+  <string name="default_web_client_id" translatable="false">962937894684-3amt0g864sko6c4c8lco5blgj97tq4ad.apps.googleusercontent.com</string>
+</resources>
