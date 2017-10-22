@@ -9,7 +9,7 @@ public class BasketballController : MonoBehaviour {
     private int currentScore = 0;
     private Vector3 InitialPosition;
     private TouchController touchsSystem;
-    public float threshHold = 15;
+    public float threshHold = 10;
     Transform cameraTransform;
     public Transform imageTarget;
     Vector3 offset;
@@ -34,16 +34,16 @@ public class BasketballController : MonoBehaviour {
 
     public void ResetPositionCamera()
     {
-        transform.SetParent(canvas, true);
-        //offset = new Vector3(0.5f /*+ Random.Range(-threshHold, threshHold)*/, /*-9.1f*/-10f, 17.3f);
-        //cameraTransform = Camera.main.transform;
+        offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -9.1f, 17.3f);
+        cameraTransform = Camera.main.transform;
 
-        //transform.position = cameraTransform.position + cameraTransform.forward * 5f;
-        //transform.position = cameraTransform.position + offset;
-        //transform.rotation = cameraTransform.rotation;
+        transform.position = cameraTransform.position + cameraTransform.forward * 5f;
+        transform.position = cameraTransform.position + offset;
+        transform.SetParent(Camera.main.transform, true);
+        transform.rotation = cameraTransform.rotation;
 
         //transform.localScale = Vector3.one;
-        this.transform.position = InitialPosition;
+        //this.transform.position = InitialPosition;
         this.GetComponent<Rigidbody>().useGravity = false;
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
