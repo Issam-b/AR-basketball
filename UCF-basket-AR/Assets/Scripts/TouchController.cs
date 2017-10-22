@@ -69,7 +69,7 @@ public class TouchController : MonoBehaviour {
     }
 
     private void BallThrow ()
-    {
+    {        {
             XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
             YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
             ZaxisForce = (FinalTouchTime - InitialTouchTime);
@@ -81,5 +81,6 @@ public class TouchController : MonoBehaviour {
             ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, ZaxisForce * 4.3f) * speed);
             canSwipe = false;
             ball.transform.SetParent(imageTarget, true);
+        }
     }
 }

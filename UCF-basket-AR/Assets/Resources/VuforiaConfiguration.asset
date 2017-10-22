@@ -15,7 +15,7 @@ MonoBehaviour:
     vuforiaLicenseKey: 
     ufoLicenseKey: QVZHQnVyNy8vLy8vQUFBQUtHN3BNY1lqb0VLN2xLajJiSFU3ZS9NaThxc2Q2dHV6SFdSZVhMVXBxQ2dwQkhSeVpZaFFCdkVGanJrazFEUHlhVnN5QmNLcG5ZS0dBdHpCdi9Qb0xrWGpBbWJ3RkVkQm91czBDUFBnTCtGQmJQMWNrLzZHWGVJQ0FzbS9vcEQ5dENYQWkrQllUc2RzZkgrbHhKaFcrU0tiM2UrY3dOVXdhSlhSZ2I3VG96SnhrK0xHVUhkUi9LN2llUkkzWG1oSmJrQnowa0EwUi8zNHpSL3RlTS83OC9qQllGUVJBQ0FQcCtBZS9HR0NHMjF6OEpzNlZQbjc4eHBQY2FDYXBPSDVDMittQ1JEMHNEZThKQ1doQ2s1L0ZRQnBGWmxXUEpCRlMxQUthaHJtYzM0NHdibHhnblN5VHF5ekt3Nllia3hkMUhwaUhCOFRNSk1rdnFXSytPMlRBY0RnczBGTVJCNTFmbk1ua1V0dHovOFM=
     delayedInitialization: 0
-    cameraDeviceModeSetting: -1
+    cameraDeviceModeSetting: -2
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 1
     autoStartTracker: 1
-    trackingMode: 0
-    posePrediction: 0
+    trackingMode: 1
+    posePrediction: 1
     modelCorrectionMode: 2
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}

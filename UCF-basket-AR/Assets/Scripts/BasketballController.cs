@@ -14,6 +14,7 @@ public class BasketballController : MonoBehaviour {
     public Transform imageTarget;
     Vector3 offset;
     float distanceZ, distanceY;
+    public Transform canvas;
 
     private void Start()
     {
@@ -33,16 +34,16 @@ public class BasketballController : MonoBehaviour {
 
     public void ResetPositionCamera()
     {
-        offset = new Vector3(0.5f /*+ Random.Range(-threshHold, threshHold)*/, /*-9.1f*/-10f, 17.3f);
-        cameraTransform = Camera.main.transform;
+        transform.SetParent(canvas, true);
+        //offset = new Vector3(0.5f /*+ Random.Range(-threshHold, threshHold)*/, /*-9.1f*/-10f, 17.3f);
+        //cameraTransform = Camera.main.transform;
 
         //transform.position = cameraTransform.position + cameraTransform.forward * 5f;
-        transform.SetParent(Camera.main.transform, true);
-        transform.position = cameraTransform.position + offset;
-        transform.rotation = cameraTransform.rotation;
-        
-        //transform.localScale = Vector3.one;
+        //transform.position = cameraTransform.position + offset;
+        //transform.rotation = cameraTransform.rotation;
 
+        //transform.localScale = Vector3.one;
+        this.transform.position = InitialPosition;
         this.GetComponent<Rigidbody>().useGravity = false;
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
