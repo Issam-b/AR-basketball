@@ -9,7 +9,7 @@ public class BasketballController : MonoBehaviour {
     private int currentScore = 0;
     private Vector3 InitialPosition;
     private TouchController touchsSystem;
-    public float threshHold = 10;
+    public float threshHold = 4;
     Transform cameraTransform;
     public Transform imageTarget;
     Vector3 offset;
