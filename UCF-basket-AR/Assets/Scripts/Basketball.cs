@@ -3,27 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Basketball : MonoBehaviour {
 
-    //public Text DistanceY, DistanceZ;
-
-    //public Text scoreText;  
-    //private int currentScore = 0;
-    private Vector3 InitialPosition;
+    //private Vector3 InitialPosition;
     private GameController gameController;
     public float threshHold = 4;
     Transform cameraTransform;
-    //public Transform imageTarget;
     Vector3 offset;
-    //float distanceZ, distanceY;
-    //public Transform canvas;
 
     private void Start()
     {
         this.GetComponent<Rigidbody>().useGravity = false;
-        gameController = GameObject.FindObjectOfType<GameController>().GetComponent<GameController>();
-        //TODO: change initial position to camera perspective;
-        InitialPosition = this.transform.position;
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //InitialPosition = this.transform.position;
         ResetPositionCamera();
     }
 
@@ -37,7 +30,7 @@ public class Basketball : MonoBehaviour {
 
     public void ResetPositionCamera()
     {
-        offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -6.5f, 17.3f);
+        offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -9f, 17.3f);
         cameraTransform = Camera.main.transform;
 
         transform.position = cameraTransform.position + cameraTransform.forward * 5f;
@@ -57,7 +50,6 @@ public class Basketball : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ring")
         {
-            //ScoreUpdate();
             gameController.UpdateScore();
         }
         
@@ -65,18 +57,5 @@ public class Basketball : MonoBehaviour {
             ResetPositionCamera();
         }
     }
-
-    //private void ScoreUpdate()
-    //{
-    //    currentScore++;
-    //    scoreText.text = "Score: " + currentScore.ToString();
-    //}
-
-    //public void ResetPosition()
-    //{
-    //    this.transform.position = InitialPosition + new Vector3(Random.Range(-threshHold, threshHold), 0f, 0f);
-    //    this.GetComponent<Rigidbody>().useGravity = false;
-    //    this.GetComponent<Rigidbody>().isKinematic = true;
-    //    this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-    //}
+    
 }

@@ -6,9 +6,9 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
+
 public class GameController : MonoBehaviour {
 
-    //private float InitialTouchTime, FinalTouchTime;
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
 
@@ -20,13 +20,14 @@ public class GameController : MonoBehaviour {
     public bool canSwipe = true;
     public Text scoreText, timeText, ballCountText;
     private float startTime = 0f, temp;
-    string minutes, seconds;    
+    string minutes, seconds;
    
     DatabaseReference reference;
     Player player;
 
     private void Start()
     {
+        
         //ball.useGravity = false;
 
         // Setting Firebase database
@@ -45,8 +46,8 @@ public class GameController : MonoBehaviour {
     {
         if (canSwipe)
         {
-            //InitialTouchTime = Time.time;
             InitialTouchPosition = Input.mousePosition;
+            Debug.Log(InitialTouchPosition);
         }
     }
 
@@ -54,8 +55,8 @@ public class GameController : MonoBehaviour {
     {
         if (canSwipe)
         {
-            //FinalTouchTime = Time.time;
             FinalTouchPosition = Input.mousePosition;
+            Debug.Log(FinalTouchPosition);
             if (ballCount == 0)
                 startTime = Time.time;
             BallThrow();
@@ -66,16 +67,14 @@ public class GameController : MonoBehaviour {
 
     public void BallThrow ()
     {
-        {
-            XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
-            YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
-            ball.useGravity = true;
-            ball.isKinematic = false;
-            ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
-            ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
-            canSwipe = false;
-            ball.transform.SetParent(imageTarget, true);
-        }
+        XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
+        YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
+        ball.useGravity = true;
+        ball.isKinematic = false;
+        ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
+        ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
+        canSwipe = false;
+        ball.transform.SetParent(imageTarget, true);
     }
 
     public void UpdateScore ()
@@ -103,4 +102,5 @@ public class GameController : MonoBehaviour {
             player.SetTime(float.Parse(minutes) * 60 + float.Parse(seconds));
         }
     }
+
 }
