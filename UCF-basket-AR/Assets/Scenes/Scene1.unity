@@ -457,12 +457,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 978193987}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &518136797 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114436842550044714, guid: 5a7a67692829e6d4f9168f1e21472a93,
-    type: 2}
-  m_PrefabInternal: {fileID: 1976316504}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &535985227
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +530,8 @@ GameObject:
   - component: {fileID: 619350873}
   - component: {fileID: 619350872}
   - component: {fileID: 619350874}
-  - component: {fileID: 619350875}
   - component: {fileID: 619350871}
+  - component: {fileID: 619350875}
   m_Layer: 0
   m_Name: Basketball
   m_TagString: Untagged
@@ -584,7 +578,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619350870}
   m_LocalRotation: {x: -0.0007847545, y: 0.0023887474, z: 0.04840243, w: 0.99882483}
-  m_LocalPosition: {x: -0.50006104, y: -5.974573, z: 11.017044}
+  m_LocalPosition: {x: -2.58, y: 27.15, z: 97.24}
   m_LocalScale: {x: 0.64999974, y: 0.6500007, z: 0.6499997}
   m_Children:
   - {fileID: 1702680833}
@@ -611,8 +605,7 @@ Rigidbody:
 --- !u!114 &619350875
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114969964069887828, guid: 04bbe619d43f04d4987029097d2dad72,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619350870}
   m_Enabled: 1
@@ -620,12 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b981c2a986f8745a711cf5c6d8d1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 505793769}
-  DistanceY: {fileID: 518136797}
-  DistanceZ: {fileID: 887141468}
-  threshHold: 10
-  imageTarget: {fileID: 731084883}
-  canvas: {fileID: 954193908}
+  threshHold: 4
 --- !u!1 &681666849
 GameObject:
   m_ObjectHideFlags: 0
@@ -28181,7 +28169,7 @@ GameObject:
   - component: {fileID: 687944812}
   - component: {fileID: 687944813}
   m_Layer: 0
-  m_Name: TouchController
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28211,12 +28199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a4e1ae0e346ca48a2ccefefb020ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
   ball: {fileID: 619350874}
+  imageTarget: {fileID: 731084883}
+  speed: 0.5
   canSwipe: 1
+  scoreText: {fileID: 505793769}
   timeText: {fileID: 406424266}
   ballCountText: {fileID: 1580251314}
-  imageTarget: {fileID: 731084883}
 --- !u!1 &731084877
 GameObject:
   m_ObjectHideFlags: 0
@@ -28463,12 +28452,6 @@ Transform:
   m_Father: {fileID: 1258600598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &887141468 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114436842550044714, guid: 5a7a67692829e6d4f9168f1e21472a93,
-    type: 2}
-  m_PrefabInternal: {fileID: 2008054331}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &899898031
 GameObject:
   m_ObjectHideFlags: 0
@@ -28961,8 +28944,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954193904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 603.5, y: 299, z: 0}
-  m_LocalScale: {x: 0.9429687, y: 0.9429687, z: 0.9429687}
+  m_LocalPosition: {x: 275.5, y: 296.5, z: 0}
+  m_LocalScale: {x: 0.43046874, y: 0.43046874, z: 0.43046874}
   m_Children:
   - {fileID: 120038846}
   m_Father: {fileID: 0}

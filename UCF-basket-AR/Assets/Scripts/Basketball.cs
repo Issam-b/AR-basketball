@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasketballController : MonoBehaviour {
+public class Basketball : MonoBehaviour {
 
-    public Text scoreText, DistanceY, DistanceZ;
-    private int currentScore = 0;
+    //public Text DistanceY, DistanceZ;
+
+    //public Text scoreText;  
+    //private int currentScore = 0;
     private Vector3 InitialPosition;
-    private TouchController touchsSystem;
+    private GameController gameController;
     public float threshHold = 4;
     Transform cameraTransform;
-    public Transform imageTarget;
+    //public Transform imageTarget;
     Vector3 offset;
-    float distanceZ, distanceY;
-    public Transform canvas;
+    //float distanceZ, distanceY;
+    //public Transform canvas;
 
     private void Start()
     {
         this.GetComponent<Rigidbody>().useGravity = false;
-        touchsSystem = GameObject.FindObjectOfType<TouchController>().GetComponent<TouchController>();
+        gameController = GameObject.FindObjectOfType<GameController>().GetComponent<GameController>();
+        //TODO: change initial position to camera perspective;
         InitialPosition = this.transform.position;
         ResetPositionCamera();
     }
@@ -34,7 +37,7 @@ public class BasketballController : MonoBehaviour {
 
     public void ResetPositionCamera()
     {
-        offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -9.1f, 17.3f);
+        offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -6.5f, 17.3f);
         cameraTransform = Camera.main.transform;
 
         transform.position = cameraTransform.position + cameraTransform.forward * 5f;
@@ -47,28 +50,33 @@ public class BasketballController : MonoBehaviour {
         this.GetComponent<Rigidbody>().useGravity = false;
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        touchsSystem.canSwipe = true;
+        gameController.canSwipe = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ring")
         {
-            ScoreUpdate();
+            //ScoreUpdate();
+            gameController.UpdateScore();
+        }
+        
+        if (other.gameObject.tag == "Border") {
+            ResetPositionCamera();
         }
     }
 
-    private void ScoreUpdate()
-    {
-        currentScore++;
-        scoreText.text = "Score: " + currentScore.ToString();
-    }
+    //private void ScoreUpdate()
+    //{
+    //    currentScore++;
+    //    scoreText.text = "Score: " + currentScore.ToString();
+    //}
 
-    public void ResetPosition()
-    {
-            this.transform.position = InitialPosition + new Vector3(Random.Range(-threshHold, threshHold), 0f, 0f);
-            this.GetComponent<Rigidbody>().useGravity = false;
-            this.GetComponent<Rigidbody>().isKinematic = true;
-            this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-    }
+    //public void ResetPosition()
+    //{
+    //    this.transform.position = InitialPosition + new Vector3(Random.Range(-threshHold, threshHold), 0f, 0f);
+    //    this.GetComponent<Rigidbody>().useGravity = false;
+    //    this.GetComponent<Rigidbody>().isKinematic = true;
+    //    this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    //}
 }

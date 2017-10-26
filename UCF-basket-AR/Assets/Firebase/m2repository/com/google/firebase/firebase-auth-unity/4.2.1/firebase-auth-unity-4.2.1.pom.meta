@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 0fa0141398ceaa84fb4913defba22dc0
-folderAsset: yes
-timeCreated: 1508670589
-licenseType: Free
+guid: 39b491b7f70649948545ba6d903e9307
+labels:
+- gvh
+- gvh_version-4.2.1
 DefaultImporter:
   externalObjects: {}
   userData: 
