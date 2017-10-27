@@ -39,7 +39,6 @@ public class Basketball : MonoBehaviour {
         transform.rotation = cameraTransform.rotation;
 
         //transform.localScale = Vector3.one;
-        //this.transform.position = InitialPosition;
         this.GetComponent<Rigidbody>().useGravity = false;
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -52,10 +51,11 @@ public class Basketball : MonoBehaviour {
         {
             gameController.UpdateScore();
         }
-        
-        if (other.gameObject.tag == "Border") {
+
+        if (other.gameObject.tag == "Border")
+        {
             ResetPositionCamera();
         }
     }
-    
+
 }

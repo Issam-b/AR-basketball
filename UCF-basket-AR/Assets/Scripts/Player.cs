@@ -5,7 +5,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-public class Player {
+public class Player : MonoBehaviour {
 
     private int Score = 0;
     private int Throws = 0;
@@ -18,8 +18,7 @@ public class Player {
     private DatabaseReference questions, answers;
     private int numQuests;
 
-
-    public Player (string PlayerId, DatabaseReference reference)
+    public Player(string PlayerId, DatabaseReference reference)
     {
         this.PlayerId = PlayerId;
         this.reference = reference;
@@ -37,7 +36,7 @@ public class Player {
 
     }
 
-    public void InitStats ()
+    public void InitStats()
     {
         this.Score = 0;
         SetScore(0);
@@ -48,7 +47,7 @@ public class Player {
         this.CheatOn = false;
         SetCheatOn(false);
     }
-    public void FetchQuests ()
+    public void FetchQuests()
     {
 
         questions.GetValueAsync().ContinueWith(task =>
@@ -74,7 +73,7 @@ public class Player {
         this.Score = value;
         playerScore.SetValueAsync(value);
     }
-    public int GetScore ()
+    public int GetScore()
     {
         return this.Score;
     }

@@ -449,12 +449,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224161659829044738, guid: 5a7a67692829e6d4f9168f1e21472a93,
     type: 2}
   m_PrefabInternal: {fileID: 978193987}
---- !u!114 &505793769 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114436842550044714, guid: 5a7a67692829e6d4f9168f1e21472a93,
-    type: 2}
-  m_PrefabInternal: {fileID: 978193987}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &535985227
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,8 +522,8 @@ GameObject:
   - component: {fileID: 619350873}
   - component: {fileID: 619350872}
   - component: {fileID: 619350874}
-  - component: {fileID: 619350871}
   - component: {fileID: 619350875}
+  - component: {fileID: 619350871}
   m_Layer: 0
   m_Name: Basketball
   m_TagString: Ball
@@ -576,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619350870}
   m_LocalRotation: {x: -0.0007847545, y: 0.0023887474, z: 0.04840243, w: 0.99882483}
-  m_LocalPosition: {x: -2.58, y: 27.15, z: 97.24}
+  m_LocalPosition: {x: -0.50006104, y: -5.974573, z: 11.017044}
   m_LocalScale: {x: 0.64999974, y: 0.6500007, z: 0.6499997}
   m_Children:
   - {fileID: 1702680833}
@@ -603,7 +597,8 @@ Rigidbody:
 --- !u!114 &619350875
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114969964069887828, guid: 04bbe619d43f04d4987029097d2dad72,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619350870}
   m_Enabled: 1
@@ -611,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b981c2a986f8745a711cf5c6d8d1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshHold: 4
+  threshHold: 10
 --- !u!1 &681666849
 GameObject:
   m_ObjectHideFlags: 0
@@ -28199,9 +28194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 619350874}
   imageTarget: {fileID: 731084883}
-  speed: 0.5
+  speed: 40
   canSwipe: 1
-  scoreText: {fileID: 505793769}
+  scoreText: {fileID: 1576783509}
   timeText: {fileID: 406424266}
   ballCountText: {fileID: 1580251314}
 --- !u!1 &731084877
@@ -28217,7 +28212,6 @@ GameObject:
   - component: {fileID: 731084880}
   - component: {fileID: 731084879}
   - component: {fileID: 731084878}
-  - component: {fileID: 731084884}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -28333,17 +28327,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &731084884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 731084877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25c9ca2848eae8468500ebf962c59f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &749925513
 GameObject:
   m_ObjectHideFlags: 0
@@ -28954,8 +28937,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954193904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 360, y: 640, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 552.5, y: 299, z: 0}
+  m_LocalScale: {x: 1.5347222, y: 1.5347222, z: 1.5347222}
   m_Children:
   - {fileID: 120038846}
   m_Father: {fileID: 0}
@@ -29564,7 +29547,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1125831272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 20.95, z: -40.79}
+  m_LocalPosition: {x: -0.03, y: 18.33, z: -40.79}
   m_LocalScale: {x: 4.2267346, y: 4.2267356, z: 4.2267356}
   m_Children: []
   m_Father: {fileID: 1258600598}
@@ -30207,6 +30190,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554512697}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1576783509 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114436842550044714, guid: 5a7a67692829e6d4f9168f1e21472a93,
+    type: 2}
+  m_PrefabInternal: {fileID: 978193987}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &1580251314 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114436842550044714, guid: 5a7a67692829e6d4f9168f1e21472a93,
