@@ -58,4 +58,14 @@ public class Basketball : MonoBehaviour {
         }
     }
 
+    //public void Show()
+    //{
+    //    this.GetComponent<GameObject>().SetActive(true);
+    //}
+
+    //public void Hide()
+    //{
+    //    this.GetComponent<GameObject>().SetActive(false);
+    //}
+
 }
