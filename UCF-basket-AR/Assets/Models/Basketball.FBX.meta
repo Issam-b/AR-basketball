@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-guid: 70af8b0270040c04c87ade3ab4421f17
-timeCreated: 1507649841
+guid: e9aebbc93c4418840ad26e11a0b8142c
+timeCreated: 1509225273
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Dummy01
-    100004: leather
-    100006: seam
     400000: //RootNode
-    400002: Dummy01
-    400004: leather
-    400006: seam
-    2300000: leather
-    2300002: seam
-    3300000: leather
-    3300002: seam
-    4300000: leather
-    4300002: seam
-    9500000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Ball
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -102,7 +92,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

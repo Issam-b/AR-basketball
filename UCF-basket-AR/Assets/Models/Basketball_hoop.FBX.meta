@@ -1,93 +1,42 @@
 fileFormatVersion: 2
-guid: e49c728ec4222ab4db28c7c7dc751762
-timeCreated: 1507650134
+guid: 925d18146c0624446bb559c58405d864
+timeCreated: 1509223692
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera01
-    100004: Camera01.Target
-    100006: Dummy01
-    100008: E001BASK
-    100010: E001BOX
-    100012: E001GUM
-    100014: E001IRON
-    100016: E001LINE
-    100018: E001NET
-    100020: E001NUTS
-    100022: E001PLNK
-    100024: E001RING
-    100026: E001TUBE
-    100028: Spot01
-    100030: Spot01.Target
-    100032: Spot02
-    100034: Spot02.Target
-    100036: Spot03
-    100038: Spot03.Target
-    100040: Spot04
-    100042: Spot04.Target
-    100044: Spot05
-    100046: Spot05.Target
+    100002: LINE_BIG
+    100004: LINE_SMALL
+    100006: NET
+    100008: PLNK
+    100010: RING
+    100012: TUBE
     400000: //RootNode
-    400002: Camera01
-    400004: Camera01.Target
-    400006: Dummy01
-    400008: E001BASK
-    400010: E001BOX
-    400012: E001GUM
-    400014: E001IRON
-    400016: E001LINE
-    400018: E001NET
-    400020: E001NUTS
-    400022: E001PLNK
-    400024: E001RING
-    400026: E001TUBE
-    400028: Spot01
-    400030: Spot01.Target
-    400032: Spot02
-    400034: Spot02.Target
-    400036: Spot03
-    400038: Spot03.Target
-    400040: Spot04
-    400042: Spot04.Target
-    400044: Spot05
-    400046: Spot05.Target
-    2000000: Camera01
-    2300000: E001BOX
-    2300002: E001GUM
-    2300004: E001IRON
-    2300006: E001LINE
-    2300008: E001NET
-    2300010: E001NUTS
-    2300012: E001PLNK
-    2300014: E001RING
-    2300016: E001TUBE
-    3300000: E001BOX
-    3300002: E001GUM
-    3300004: E001IRON
-    3300006: E001LINE
-    3300008: E001NET
-    3300010: E001NUTS
-    3300012: E001PLNK
-    3300014: E001RING
-    3300016: E001TUBE
-    4300000: E001BOX
-    4300002: E001GUM
-    4300004: E001IRON
-    4300006: E001LINE
-    4300008: E001NET
-    4300010: E001NUTS
-    4300012: E001PLNK
-    4300014: E001RING
-    4300016: E001TUBE
-    7400000: Take 001
-    9500000: //RootNode
-    10800000: Spot01
-    10800002: Spot02
-    10800004: Spot03
-    10800006: Spot04
-    10800008: Spot05
+    400002: LINE_BIG
+    400004: LINE_SMALL
+    400006: NET
+    400008: PLNK
+    400010: RING
+    400012: TUBE
+    2300000: LINE_BIG
+    2300002: LINE_SMALL
+    2300004: NET
+    2300006: PLNK
+    2300008: RING
+    2300010: TUBE
+    3300000: LINE_BIG
+    3300002: LINE_SMALL
+    3300004: NET
+    3300006: PLNK
+    3300008: RING
+    3300010: TUBE
+    4300000: TUBE
+    4300002: RING
+    4300004: PLNK
+    4300006: NET
+    4300008: LINE_BIG
+    4300010: LINE_SMALL
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -107,8 +56,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: E001NUTS
-    second: {fileID: 2100000, guid: 38e40d1fbe225df4aa22bf5773507de3, type: 2}
+      name: E001NIGR.001
+    second: {fileID: 2100000, guid: 14d20f4430143894fa73ad42c81fc5e4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -190,7 +139,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
