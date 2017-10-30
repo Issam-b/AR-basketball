@@ -1,38 +1,42 @@
 fileFormatVersion: 2
-guid: 04e0788ae96df5a48bf8d3aaac8dac20
-timeCreated: 1509209884
+guid: e8bf95dc35df0fd43aab273d060533a7
+timeCreated: 1509365500
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: E001LINE
-    100004: E001NET
-    100006: E001PLNK
-    100008: E001RING
-    100010: E001TUBE
+    100002: LINE_BIG
+    100004: LINE_SMALL
+    100006: NET
+    100008: PLNK
+    100010: RING
+    100012: TUBE
     400000: //RootNode
-    400002: E001LINE
-    400004: E001NET
-    400006: E001PLNK
-    400008: E001RING
-    400010: E001TUBE
-    2300000: E001LINE
-    2300002: E001NET
-    2300004: E001PLNK
-    2300006: E001RING
-    2300008: E001TUBE
-    3300000: E001LINE
-    3300002: E001NET
-    3300004: E001PLNK
-    3300006: E001RING
-    3300008: E001TUBE
-    4300000: E001LINE
-    4300002: E001NET
-    4300004: E001PLNK
-    4300006: E001RING
-    4300008: E001TUBE
-    9500000: //RootNode
+    400002: LINE_BIG
+    400004: LINE_SMALL
+    400006: NET
+    400008: PLNK
+    400010: RING
+    400012: TUBE
+    2300000: LINE_BIG
+    2300002: LINE_SMALL
+    2300004: NET
+    2300006: PLNK
+    2300008: RING
+    2300010: TUBE
+    3300000: LINE_BIG
+    3300002: LINE_SMALL
+    3300004: NET
+    3300006: PLNK
+    3300008: RING
+    3300010: TUBE
+    4300000: TUBE
+    4300002: RING
+    4300004: PLNK
+    4300006: NET
+    4300008: LINE_BIG
+    4300010: LINE_SMALL
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -48,7 +52,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: E001NIGR
-    second: {fileID: 2100000, guid: 9ad2a58744bd480428e293bc454e3704, type: 2}
+    second: {fileID: 2100000, guid: e4511f66fc77ab74186aaf2faa03435d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: E001NIGR.001
+    second: {fileID: 2100000, guid: 96d2d4648022241498912dd08e7d4fba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -130,7 +139,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
