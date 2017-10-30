@@ -5,18 +5,21 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 
-public class Player : MonoBehaviour {
+public class Player {
 
     private int Score = 0;
     private int Throws = 0;
     private float Time = 0f;
     private string PlayerId;
     private bool CheatOn = false;
-    private Dictionary<string, int> Survey;
-    private DatabaseReference reference, player, playerStats, playerAns, playerScore;
+    private List<string> quests = new List<string>();
+    private int[][] ans;
+    //private ArrayList answers2 = new ArrayList();
+    private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
     private DatabaseReference playerTime, playerThrows, playerCheatOn;
     private DatabaseReference questions, answers;
     private int numQuests;
+    DataSnapshot snapshot;
 
     public Player(string PlayerId, DatabaseReference reference)
     {
@@ -29,7 +32,8 @@ public class Player : MonoBehaviour {
         playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
         playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("CheatOn");
         questions = reference.Child("Questions");
-        playerAns = reference.Child(this.PlayerId).Child("Answers");
+        playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
+        playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
 
         InitStats();
         FetchQuests();
@@ -47,27 +51,42 @@ public class Player : MonoBehaviour {
         this.CheatOn = false;
         SetCheatOn(false);
     }
+
     public void FetchQuests()
     {
-
-        questions.GetValueAsync().ContinueWith(task =>
-        {
+        FirebaseDatabase.DefaultInstance
+        .GetReference("Questions")
+        .GetValueAsync().ContinueWith(task => {
             if (task.IsFaulted)
             {
-                Debug.Log("Questions fetch not completed !");
+                Debug.LogError("Questions fetch not completed !");
             }
             else if (task.IsCompleted)
             {
-                Debug.Log(task);
-                Survey.Add(task.Result.Value.ToString(), 5);
+                snapshot = task.Result;
+                
+                for (int i = 1; i < 4; i++)
+                {
+                    quests.Add(snapshot.Child(i.ToString()).Value.ToString());
+                    //Debug.Log(snapshot.Child(i.ToString()).Value.ToString());
+                }
+                //ans = new int[2][quests.];
             }
         });
-
-        //foreach (KeyValuePair<string, int> quest in Survey)
-        //{
-        //    Debug.Log(quest);
-        //}
     }
+
+    public void Answer1(int answer, int qNumber)
+    {
+        //ans[0][]
+        playerAns1.Child(qNumber.ToString()).SetValueAsync(answer);
+    }
+
+    public void Answer2(int answer, int qNumber)
+    {
+
+        playerAns2.Child(qNumber.ToString()).SetValueAsync(answer);
+    }
+
     public void SetScore(int value)
     {
         this.Score = value;
