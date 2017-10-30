@@ -12,12 +12,11 @@ public class Player {
     private float Time = 0f;
     private string PlayerId;
     private bool CheatOn = false;
-    private List<string> quests = new List<string>();
-    private int[][] ans;
-    //private ArrayList answers2 = new ArrayList();
+    private List<string> questions = new List<string>();
+    private int[,] answers = new int[2,10];
     private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
     private DatabaseReference playerTime, playerThrows, playerCheatOn;
-    private DatabaseReference questions, answers;
+    private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
 
@@ -31,13 +30,18 @@ public class Player {
         playerTime = reference.Child(this.PlayerId).Child("GameStats").Child("Time");
         playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
         playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("CheatOn");
-        questions = reference.Child("Questions");
+        questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
+
+
+        //playerAns1.Child(2.ToString()).SetValueAsync(4);
 
         InitStats();
         FetchQuests();
 
+        
+        Answer1(2, 3);
     }
 
     public void InitStats()
@@ -64,26 +68,39 @@ public class Player {
             else if (task.IsCompleted)
             {
                 snapshot = task.Result;
-                
-                for (int i = 1; i < 4; i++)
+                if (snapshot.Child(1.ToString()).Value.ToString() != null)
                 {
-                    quests.Add(snapshot.Child(i.ToString()).Value.ToString());
-                    //Debug.Log(snapshot.Child(i.ToString()).Value.ToString());
+                    int counter = 1;
+                    while (snapshot.Child(counter.ToString()).Value.ToString() != null)
+                    {
+                        questions.Add(snapshot.Child(counter.ToString()).Value.ToString());
+                        //Debug.Log(snapshot.Child(counter.ToString()).Value.ToString());
+                        //Debug.Log(questions[counter - 1]);
+                        counter++;
+                    }
+                    counter--;
+
+                    //Debug.Log(counter);
+                    //InitArrays(counter);
                 }
-                //ans = new int[2][quests.];
             }
         });
     }
 
-    public void Answer1(int answer, int qNumber)
+    //private void InitArrays(int counter)
+    //{
+    //    answers = new int[2, counter];
+    //}
+
+    public void Answer1(int qNumber, int answer)
     {
-        //ans[0][]
+        answers[1, qNumber - 1] = answer;
         playerAns1.Child(qNumber.ToString()).SetValueAsync(answer);
     }
 
-    public void Answer2(int answer, int qNumber)
+    public void Answer2(int qNumber, int answer)
     {
-
+        answers[1, qNumber] = answer;
         playerAns2.Child(qNumber.ToString()).SetValueAsync(answer);
     }
 
