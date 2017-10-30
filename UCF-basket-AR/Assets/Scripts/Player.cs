@@ -12,32 +12,33 @@ public class Player {
     private float Time = 0f;
     private string PlayerId;
     private bool CheatOn = false;
-    private List<string> quests = new List<string>();
-    private int[][] ans;
-    //private ArrayList answers2 = new ArrayList();
+    private List<string> questions = new List<string>();
+    private int[,] answers = new int[2,10];
     private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
     private DatabaseReference playerTime, playerThrows, playerCheatOn;
-    private DatabaseReference questions, answers;
+    private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
+    public static int QuestsNumber { get; set; }
 
-    public Player(string PlayerId, DatabaseReference reference)
+    public Player(string PlayerId)
     {
+        // Setting Firebase database
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://ucfarbasketball.firebaseio.com/");
+        this.reference = FirebaseDatabase.DefaultInstance.RootReference;
         this.PlayerId = PlayerId;
-        this.reference = reference;
         player = reference.Child(this.PlayerId);
         playerStats = reference.Child(this.PlayerId).Child("GameStats");
         playerScore = reference.Child(this.PlayerId).Child("GameStats").Child("Score");
         playerTime = reference.Child(this.PlayerId).Child("GameStats").Child("Time");
         playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
         playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("CheatOn");
-        questions = reference.Child("Questions");
+        questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
 
         InitStats();
         FetchQuests();
-
     }
 
     public void InitStats()
@@ -64,26 +65,30 @@ public class Player {
             else if (task.IsCompleted)
             {
                 snapshot = task.Result;
-                
-                for (int i = 1; i < 4; i++)
+                if (snapshot.Child(1.ToString()).Value.ToString() != null)
                 {
-                    quests.Add(snapshot.Child(i.ToString()).Value.ToString());
-                    //Debug.Log(snapshot.Child(i.ToString()).Value.ToString());
+                    QuestsNumber = 1;
+                    while (snapshot.Child(QuestsNumber.ToString()).Value.ToString() != null)
+                    {
+                        Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        questions.Add(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        QuestsNumber++;
+                    }
+                    Debug.Log("Questions fetched");
                 }
-                //ans = new int[2][quests.];
             }
         });
     }
 
-    public void Answer1(int answer, int qNumber)
+    public void Answer1(int qNumber, int answer)
     {
-        //ans[0][]
+        answers[1, qNumber - 1] = answer;
         playerAns1.Child(qNumber.ToString()).SetValueAsync(answer);
     }
 
-    public void Answer2(int answer, int qNumber)
+    public void Answer2(int qNumber, int answer)
     {
-
+        answers[1, qNumber] = answer;
         playerAns2.Child(qNumber.ToString()).SetValueAsync(answer);
     }
 
@@ -122,5 +127,15 @@ public class Player {
     public bool GetCheatOn()
     {
         return this.CheatOn;
+    }
+
+    public string GetPlayerId ()
+    {
+        return this.PlayerId;
+    }
+
+    public string GetQuestion (int qNumber)
+    {
+        return questions[qNumber - 1];
     }
 }
