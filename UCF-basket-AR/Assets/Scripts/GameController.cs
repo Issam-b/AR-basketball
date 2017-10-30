@@ -92,8 +92,8 @@ public class GameController : MonoBehaviour {
         {
             temp = Time.time - startTime;
             minutes = ((int)temp / 60).ToString();
-            seconds = (temp % 60).ToString("f2");
-            timeText.text = "Time: " + minutes + "." + seconds;
+            seconds = (temp % 60).ToString("f1");
+            timeText.text = "Time: " + minutes + ":" + seconds;
 
             player.SetTime(float.Parse(minutes) * 60 + float.Parse(seconds));
         }
