@@ -19,7 +19,12 @@ public class Player {
     private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
+    public int QuestsNumber { get; set; }
 
+    public Player ()
+    {
+
+    }
     public Player(string PlayerId, DatabaseReference reference)
     {
         this.PlayerId = PlayerId;
@@ -79,6 +84,8 @@ public class Player {
                         counter++;
                     }
                     counter--;
+
+                    QuestsNumber = counter;
 
                     //Debug.Log(counter);
                     //InitArrays(counter);
