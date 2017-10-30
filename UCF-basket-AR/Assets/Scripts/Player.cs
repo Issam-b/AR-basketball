@@ -140,4 +140,9 @@ public class Player {
     {
         return this.CheatOn;
     }
+
+    public string GetQuestion (int qNumber)
+    {
+        return questions[qNumber - 1];
+    }
 }

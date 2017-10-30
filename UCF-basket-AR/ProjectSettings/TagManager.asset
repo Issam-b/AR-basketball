@@ -7,6 +7,11 @@ TagManager:
   - Ring
   - Border
   - Ball
+  - UserField
+  - Login
+  - Survey1
+  - StartGame
+  - QuestionText
   layers:
   - Default
   - TransparentFX
