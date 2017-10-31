@@ -12,8 +12,8 @@ public class Player {
     private float Time = 0f;
     private string PlayerId;
     private bool CheatOn = false;
-    private List<string> questions = new List<string>();
-    private int[,] answers = new int[2,10];
+    public List<string> questions = new List<string>();
+    public int[,] answers = new int[2,10];
     private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
     private DatabaseReference playerTime, playerThrows, playerCheatOn;
     private DatabaseReference questionsRef, answersRef;
@@ -46,7 +46,7 @@ public class Player {
         FetchQuests();
 
         
-        Answer1(2, 3);
+        //Answer1(2, 3);
     }
 
     public void InitStats()
