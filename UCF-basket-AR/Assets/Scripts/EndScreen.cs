@@ -15,10 +15,9 @@ public class EndScreen : MonoBehaviour {
     private int answer;
     private bool toggleOn = false;
     private int qNumber = 1;
-    private int waited = 0;
     public GameObject survey1, newGame;
     public ToggleGroup RateToggleGroup;
-    public Button nextButton;
+    public Button nextButton; 
     public Text questionText;
 
 
