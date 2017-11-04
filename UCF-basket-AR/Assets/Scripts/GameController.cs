@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity.Editor;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    public const int gameTime = 300; 
+    public const int gameTime = 10; 
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
     private int ballCount = 0;

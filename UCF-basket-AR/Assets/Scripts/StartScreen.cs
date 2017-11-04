@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Firebase;
 using Firebase.Database;
-using Firebase.Unity.Editor;
-using System.Linq;
 
 public class StartScreen : MonoBehaviour {
 
@@ -15,7 +10,6 @@ public class StartScreen : MonoBehaviour {
     private string userName;
     private Toggle[] RateToggles = new Toggle[5];
     private int answer;
-    private bool toggleOn = false;
     private int qNumber = 1;
     private int waited = 0;
     public GameObject login, survey1, startGame;
@@ -42,16 +36,13 @@ public class StartScreen : MonoBehaviour {
     {
         if (userName != "")
         {
-            userName = System.DateTime.Now.ToString("dd-MM_HH-mm") + "-" + userNameText.text;
+            if (userName != "test")
+            {
+                userName = System.DateTime.Now.ToString("dd-MM_HH-mm") + "-" + userNameText.text;
+            }
             Debug.Log("Username: " + userName);
             player = new Player(userName);
             Debug.Log("Created player object: " + player);
-
-            for (int i = 0; i < 5; i++)
-                RateToggles[i].onValueChanged.AddListener((value) =>
-                {
-                    toggleOn = true;
-                });
 
             // get first question
             InvokeRepeating("FirstQuestion", 1, 1);
@@ -77,7 +68,8 @@ public class StartScreen : MonoBehaviour {
     // For next question button
     public void NextButton ()
     {
-        if (toggleOn && qNumber < Player.QuestsNumber)
+        
+        if (RateToggleGroup.AnyTogglesOn() && qNumber < Player.QuestsNumber)
         {
             // Get active toggle value
             foreach (Toggle tog in RateToggles)
@@ -124,15 +116,6 @@ public class StartScreen : MonoBehaviour {
             // load question
             questionText.text = player.GetQuestion(qNumber);
         }
-    }
-
-    // TODO: remove this later
-    public void UntoggleAll (Toggle[] RateToggles)
-    {
-        foreach (Toggle tog in RateToggles)
-            tog.isOn = false;
-
-        toggleOn = false;
     }
 
     // For start game button
