@@ -42,7 +42,7 @@ public class StartScreen : MonoBehaviour {
     {
         if (userName != "")
         {
-            userName = userNameText.text;
+            userName = System.DateTime.Now.ToString("dd-MM_HH-mm") + "-" + userNameText.text;
             Debug.Log("Username: " + userName);
             player = new Player(userName);
             Debug.Log("Created player object: " + player);
@@ -84,7 +84,7 @@ public class StartScreen : MonoBehaviour {
             {
                 if (tog.isOn)
                 {
-                    answer = int.Parse(tog.transform.Find("Label").GetComponent<Text>().text);
+                    answer = int.Parse(tog.transform.Find("Label").GetComponent<Text>().text.Substring(0, 1));
                     Debug.Log(answer);
                 }
             }

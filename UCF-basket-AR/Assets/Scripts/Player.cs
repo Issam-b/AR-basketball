@@ -70,7 +70,7 @@ public class Player {
                     QuestsNumber = 1;
                     while (snapshot.Child(QuestsNumber.ToString()).Value.ToString() != null)
                     {
-                        //Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
                         questions.Add(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
                         QuestsNumber++;
                     }
