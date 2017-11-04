@@ -472,7 +472,7 @@ Prefab:
     - target: {fileID: 114871770551656258, guid: d87a0053a4362d4488e6d85e0c9a9cdf,
         type: 2}
       propertyPath: m_AllowSwitchOff
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d87a0053a4362d4488e6d85e0c9a9cdf, type: 2}
