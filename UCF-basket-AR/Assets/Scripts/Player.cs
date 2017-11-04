@@ -19,16 +19,15 @@ public class Player {
     private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
-    public int QuestsNumber { get; set; }
+    public static int QuestsNumber { get; set; }
+    public static bool questFetched { get; set; }
 
-    public Player ()
+    public Player(string PlayerId)
     {
-
-    }
-    public Player(string PlayerId, DatabaseReference reference)
-    {
+        // Setting Firebase database
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://ucfarbasketball.firebaseio.com/");
+        this.reference = FirebaseDatabase.DefaultInstance.RootReference;
         this.PlayerId = PlayerId;
-        this.reference = reference;
         player = reference.Child(this.PlayerId);
         playerStats = reference.Child(this.PlayerId).Child("GameStats");
         playerScore = reference.Child(this.PlayerId).Child("GameStats").Child("Score");
@@ -38,15 +37,13 @@ public class Player {
         questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
+        questFetched = false;
 
 
         //playerAns1.Child(2.ToString()).SetValueAsync(4);
 
         InitStats();
         FetchQuests();
-
-        
-        //Answer1(2, 3);
     }
 
     public void InitStats()
@@ -75,29 +72,21 @@ public class Player {
                 snapshot = task.Result;
                 if (snapshot.Child(1.ToString()).Value.ToString() != null)
                 {
-                    int counter = 1;
-                    while (snapshot.Child(counter.ToString()).Value.ToString() != null)
+                    QuestsNumber = 1;
+                    while (snapshot.Child(QuestsNumber.ToString()).Value.ToString() != null)
                     {
-                        questions.Add(snapshot.Child(counter.ToString()).Value.ToString());
-                        //Debug.Log(snapshot.Child(counter.ToString()).Value.ToString());
-                        //Debug.Log(questions[counter - 1]);
-                        counter++;
+                        //Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        //Debug.Log(QuestsNumber);
+                        questions.Add(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        QuestsNumber++;
                     }
-                    counter--;
-
-                    QuestsNumber = counter;
-
-                    //Debug.Log(counter);
-                    //InitArrays(counter);
+                    //questFetched = true;
+                    //Debug.Log("Questions fetched");
+                    //Debug.Log(questFetched);
                 }
             }
         });
     }
-
-    //private void InitArrays(int counter)
-    //{
-    //    answers = new int[2, counter];
-    //}
 
     public void Answer1(int qNumber, int answer)
     {

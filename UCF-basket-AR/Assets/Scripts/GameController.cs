@@ -27,10 +27,10 @@ public class GameController : MonoBehaviour {
     private void Start()
     {
         // Setting Firebase database
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://ucfarbasketball.firebaseio.com/");
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        //FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://ucfarbasketball.firebaseio.com/");
+        //reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        player = new Player("test", reference);
+        //player = 
     }
 
     private void Update()
