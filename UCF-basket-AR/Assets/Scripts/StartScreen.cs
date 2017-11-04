@@ -34,6 +34,7 @@ public class StartScreen : MonoBehaviour {
     // For start survey button
     public void StartSurvey ()
     {
+        userName = userNameText.text;
         if (userName != "")
         {
             if (userName != "test")

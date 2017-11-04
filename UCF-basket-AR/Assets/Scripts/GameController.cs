@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class GameController : MonoBehaviour {
 
@@ -123,7 +124,7 @@ public class GameController : MonoBehaviour {
 
     public void GameResults()
     {
-        resultsText.text = "Your time is UP ! \n\nUsername: " + player.GetPlayerId() + "\nScore: " + player.GetScore();
+        resultsText.text = "Your time is UP ! \n\nUsername: " + Regex.Replace(player.GetPlayerId(), @"[^a-zA-Z]", "") + "\nScore: " + player.GetScore();
                             //resultsText.text = "Your time is UP ! \n\nUsername: " + player.GetPlayerId() + "\nScore: " +
                             //player.GetScore() + "\nTime: " + player.GetTime() +
                             //"\nNumber of throws: " + player.GetThrows();

@@ -48,7 +48,7 @@ public class EndScreen : MonoBehaviour {
             {
                 if (tog.isOn)
                 {
-                    answer = int.Parse(tog.transform.Find("Label").GetComponent<Text>().text);
+                    answer = int.Parse(tog.transform.Find("Label").GetComponent<Text>().text.Substring(0, 1));
                     Debug.Log(answer);
                 }
             }
