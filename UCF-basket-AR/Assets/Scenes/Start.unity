@@ -743,6 +743,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114054749820540400, guid: 96d152af2183d464788b7559786c19cf,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96d152af2183d464788b7559786c19cf, type: 2}
   m_IsPrefabParent: 0
@@ -1615,7 +1620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Enter your name:'
+  m_Text: 'Enter a username:'
 --- !u!222 &1646242336
 CanvasRenderer:
   m_ObjectHideFlags: 0

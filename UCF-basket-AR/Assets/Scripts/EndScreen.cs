@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity.Editor;
 using System.Linq;
 
 public class EndScreen : MonoBehaviour {
@@ -13,7 +10,6 @@ public class EndScreen : MonoBehaviour {
     private Player player;
     private Toggle[] RateToggles = new Toggle[5];
     private int answer;
-    private bool toggleOn = false;
     private int qNumber = 1;
     public GameObject survey1, newGame;
     public ToggleGroup RateToggleGroup;
@@ -32,12 +28,6 @@ public class EndScreen : MonoBehaviour {
         player = StartScreen.player;
         Debug.Log("Got reference to player object: " + player);
 
-        for (int i = 0; i < 5; i++)
-            RateToggles[i].onValueChanged.AddListener((value) =>
-            {
-                toggleOn = true;
-            });
-
         // get first question
         FirstQuestion();
     }
@@ -51,7 +41,7 @@ public class EndScreen : MonoBehaviour {
     // For next question button
     public void NextButton ()
     {
-        if (toggleOn && qNumber < Player.QuestsNumber)
+        if (RateToggleGroup.AnyTogglesOn() && qNumber < Player.QuestsNumber)
         {
             // Get active toggle value
             foreach (Toggle tog in RateToggles)
