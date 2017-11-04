@@ -1,4 +1,13 @@
 <dependencies>
-  <packages />
+  <packages>
+    <package>com.google.android.gms:play-services-base:11.4.2</package>
+    <package>com.google.firebase:firebase-analytics:11.4.2</package>
+    <package>com.google.firebase:firebase-analytics-unity:4.2.1</package>
+    <package>com.google.firebase:firebase-app-unity:4.2.1</package>
+    <package>com.google.firebase:firebase-auth:11.4.2</package>
+    <package>com.google.firebase:firebase-auth-unity:4.2.1</package>
+    <package>com.google.firebase:firebase-common:11.4.2</package>
+    <package>com.google.firebase:firebase-core:11.4.2</package>
+  </packages>
   <files />
 </dependencies>
