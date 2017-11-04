@@ -12,15 +12,14 @@ public class Player {
     private float Time = 0f;
     private string PlayerId;
     private bool CheatOn = false;
-    public List<string> questions = new List<string>();
-    public int[,] answers = new int[2,10];
+    private List<string> questions = new List<string>();
+    private int[,] answers = new int[2,10];
     private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
     private DatabaseReference playerTime, playerThrows, playerCheatOn;
     private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
     public static int QuestsNumber { get; set; }
-    public static bool questFetched { get; set; }
 
     public Player(string PlayerId)
     {
@@ -37,10 +36,6 @@ public class Player {
         questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
-        questFetched = false;
-
-
-        //playerAns1.Child(2.ToString()).SetValueAsync(4);
 
         InitStats();
         FetchQuests();
@@ -76,13 +71,10 @@ public class Player {
                     while (snapshot.Child(QuestsNumber.ToString()).Value.ToString() != null)
                     {
                         //Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
-                        //Debug.Log(QuestsNumber);
                         questions.Add(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
                         QuestsNumber++;
                     }
-                    //questFetched = true;
-                    //Debug.Log("Questions fetched");
-                    //Debug.Log(questFetched);
+                    Debug.Log("Questions fetched");
                 }
             }
         });
@@ -135,6 +127,11 @@ public class Player {
     public bool GetCheatOn()
     {
         return this.CheatOn;
+    }
+
+    public string GetPlayerId ()
+    {
+        return this.PlayerId;
     }
 
     public string GetQuestion (int qNumber)

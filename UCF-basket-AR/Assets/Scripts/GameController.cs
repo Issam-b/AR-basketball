@@ -5,40 +5,42 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
+    public const int gameTime = 10; 
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
+    private int ballCount = 0;
+    private float startTime = 0f, temp;
+    string minutes, seconds;
+    private bool gameDone = false;
 
     public Rigidbody ball;
     public Transform imageTarget;
-
-    private int ballCount = 0;
     public float speed = 0.5f;
     public bool canSwipe = true;
-    public Text scoreText, timeText, ballCountText;
-    private float startTime = 0f, temp;
-    string minutes, seconds;
+    public Text scoreText, timeText, ballCountText, resultsText;
+    public GameObject resultsPanel;
+    
 
-    DatabaseReference reference;
-    Player player;
+    private Player player;
 
     private void Start()
     {
-        // Setting Firebase database
-        //FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://ucfarbasketball.firebaseio.com/");
-        //reference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        //player = 
+        resultsPanel.SetActive(false);
+        player = StartScreen.player;
+        timeText.text = "Time: 5:00.0";
     }
 
     private void Update()
     {
-        UpdateTime();
+        if (!gameDone)
+        {
+            UpdateTime();
+        }
     }
-
-   
 
     public void OnTouchDown ()
     {
@@ -90,12 +92,33 @@ public class GameController : MonoBehaviour {
     {
         if (ballCount != 0)
         {
-            temp = Time.time - startTime;
+            temp = gameTime - (Time.time - startTime);
+            Debug.Log(temp);
+            if (temp <= 0)
+            {
+                canSwipe = false;
+                temp = 0;
+                resultsPanel.SetActive(true);
+                gameDone = true;
+                GameResults();
+            }
             minutes = ((int)temp / 60).ToString();
             seconds = (temp % 60).ToString("f1");
             timeText.text = "Time: " + minutes + ":" + seconds;
 
             player.SetTime(float.Parse(minutes) * 60 + float.Parse(seconds));
         }
+    }
+
+    public void GameResults()
+    {
+        resultsText.text = "Your time is UP ! \n\nUsername: " + player.GetPlayerId() + "\nScore: " +
+                            player.GetScore() + "\nTime: " + player.GetTime() +
+                            "\nNumber of throws: " + player.GetThrows();
+    }
+
+    public void EndSurvey ()
+    {
+        SceneManager.LoadScene(2);
     }
 }

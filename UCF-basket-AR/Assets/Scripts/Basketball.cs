@@ -38,7 +38,6 @@ public class Basketball : MonoBehaviour {
         transform.SetParent(Camera.main.transform, true);
         transform.rotation = cameraTransform.rotation;
 
-        //transform.localScale = Vector3.one;
         this.GetComponent<Rigidbody>().useGravity = false;
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -57,15 +56,4 @@ public class Basketball : MonoBehaviour {
             ResetPositionCamera();
         }
     }
-
-    //public void Show()
-    //{
-    //    this.GetComponent<GameObject>().SetActive(true);
-    //}
-
-    //public void Hide()
-    //{
-    //    this.GetComponent<GameObject>().SetActive(false);
-    //}
-
 }

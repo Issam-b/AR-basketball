@@ -8,22 +8,18 @@ using Firebase.Database;
 using Firebase.Unity.Editor;
 using System.Linq;
 
-public class StartScreen : MonoBehaviour {
+public class EndScreen : MonoBehaviour {
 
-    private DatabaseReference reference;
-    public static Player player;
-    private string userName;
+    private Player player;
     private Toggle[] RateToggles = new Toggle[5];
     private int answer;
     private bool toggleOn = false;
     private int qNumber = 1;
     private int waited = 0;
-    public GameObject login, survey1, startGame;
+    public GameObject survey1, newGame;
     public ToggleGroup RateToggleGroup;
     public Button nextButton;
-    public Button startGameButton;
     public Text questionText;
-    public Text userNameText;
 
 
     public void Start()
@@ -32,46 +28,25 @@ public class StartScreen : MonoBehaviour {
         RateToggles = survey1.GetComponentsInChildren<Toggle>();
 
         // Activate username view
-        login.SetActive(true);
-        survey1.SetActive(false);
-        startGame.SetActive(false);
-    }
+        newGame.SetActive(false);
 
-    // For start survey button
-    public void StartSurvey ()
-    {
-        if (userName != "")
-        {
-            userName = userNameText.text;
-            Debug.Log("Username: " + userName);
-            player = new Player(userName);
-            Debug.Log("Created player object: " + player);
+        player = StartScreen.player;
+        Debug.Log("Got reference to player object: " + player);
 
-            for (int i = 0; i < 5; i++)
-                RateToggles[i].onValueChanged.AddListener((value) =>
-                {
-                    toggleOn = true;
-                });
+        for (int i = 0; i < 5; i++)
+            RateToggles[i].onValueChanged.AddListener((value) =>
+            {
+                toggleOn = true;
+            });
 
-            // get first question
-            InvokeRepeating("FirstQuestion", 1, 1);
-
-        }
+        // get first question
+        FirstQuestion();
     }
 
     void FirstQuestion ()
     {
-        if (waited < 2)
-            waited++;
-        else
-        {
-            login.SetActive(false);
-            survey1.SetActive(true);
-            Debug.Log("Ftech question: 1");
-            FetchNextQuestion(1);
-            CancelInvoke("FirstQuestion");
-
-        }
+        Debug.Log("Ftech question: 1");
+        FetchNextQuestion(1);   
     }
 
     // For next question button
@@ -91,7 +66,7 @@ public class StartScreen : MonoBehaviour {
 
             // Save and send answer
             Debug.Log("send");
-            player.Answer1(qNumber, answer);
+            player.Answer2(qNumber, answer);
 
             // Clear toggles
             RateToggleGroup.SetAllTogglesOff();
@@ -109,7 +84,7 @@ public class StartScreen : MonoBehaviour {
             {
                 Debug.Log("Questionnaire done!");
                 survey1.SetActive(false);
-                startGame.SetActive(true);
+                newGame.SetActive(true);
             }
         }
     }
@@ -126,18 +101,9 @@ public class StartScreen : MonoBehaviour {
         }
     }
 
-    // TODO: remove this later
-    public void UntoggleAll (Toggle[] RateToggles)
-    {
-        foreach (Toggle tog in RateToggles)
-            tog.isOn = false;
-
-        toggleOn = false;
-    }
-
     // For start game button
-    public void StartGame ()
+    public void NewGame ()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
