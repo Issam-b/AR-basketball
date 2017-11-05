@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 public class GameController : MonoBehaviour {
 
-    public const int gameTime = 10; 
+    public const int gameTime = 180; 
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
     private int ballCount = 0;

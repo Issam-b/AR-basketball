@@ -5,6 +5,7 @@ using Firebase.Database;
 
 public class StartScreen : MonoBehaviour {
 
+    public const int waitForQuests = 3;
     private DatabaseReference reference;
     public static Player player;
     private string userName;
@@ -53,7 +54,7 @@ public class StartScreen : MonoBehaviour {
 
     void FirstQuestion ()
     {
-        if (waited < 2)
+        if (waited < waitForQuests)
             waited++;
         else
         {
