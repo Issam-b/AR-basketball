@@ -5,12 +5,13 @@ using System.Text.RegularExpressions;
 
 public class GameController : MonoBehaviour {
 
-    public const int gameTime = 180; 
+    public const int gameTime = 15; 
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
     private int ballCount = 0;
     private float startTime = 0f, temp;
     string minutes, seconds;
+    private bool redTime = false, isRed = false;
 
     public Rigidbody ball;
     public Transform imageTarget;
@@ -113,6 +114,11 @@ public class GameController : MonoBehaviour {
         {
             temp = gameTime - (Time.time - startTime);
             Debug.Log(temp);
+            if (temp <= 10 && !redTime)
+            {
+                InvokeRepeating("RedTimer", 0, 0.25f);
+                redTime = true;
+            }
             if (temp <= 0)
             {
                 canSwipe = false;
@@ -136,6 +142,22 @@ public class GameController : MonoBehaviour {
                             //"\nNumber of throws: " + player.GetThrows();
     }
 
+    // blink red timer
+    public void RedTimer ()
+    {
+        if (!isRed)
+        {
+            timeText.color = Color.red;
+            isRed = !isRed;
+        }
+        else
+        {
+            timeText.color = Color.white;
+            isRed = !isRed;
+        }
+        
+
+    }
     public void EndSurvey ()
     {
         SceneManager.LoadScene(2);
