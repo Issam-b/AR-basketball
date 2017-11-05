@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour {
     private int ballCount = 0;
     private float startTime = 0f, temp;
     string minutes, seconds;
-    private bool gameDone = false;
 
     public Rigidbody ball;
     public Transform imageTarget;
     public float speed = 0.5f;
     public bool canSwipe = true;
-    public Text scoreText, timeText, ballCountText, resultsText;
+    public Text scoreText, timeText, ballCountText;
+    public Text resultsText;
     public GameObject resultsPanel;
 
     private float distanceX, distanceY, distanceZ;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour {
 
     private void Update()
     {
-        if (!gameDone)
+        if (!player.GetGameDone())
         {
             UpdateTime();
         }
@@ -72,13 +72,19 @@ public class GameController : MonoBehaviour {
         YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
         ball.useGravity = true;
         ball.isKinematic = false;
-        //
-        //ball.AddForce(new Vector3(distanceX * (4) * 0.2f, distanceY * (15.5f) * 0.1f, distanceZ * (2.8f) * 0.2f) * speed);
-        //ball.AddTorque(new Vector3(distanceX * (4) * 7.1f, distanceY * (15.5f) * 7f, distanceZ * (2.8f) * 4.3f) * speed);
-         
-        // Working,Above, Trying to have an other trajectory.
-        ball.AddForce(new Vector3(distanceX * (5) * 0.2f, distanceY*(20.5f) * 0.1f, distanceZ *(2)* 0.2f) * speed);
-        ball.AddTorque(new Vector3(distanceX *(5)* 7.1f, distanceY *(20.5f)* 7f, distanceZ *(2)* 4.3f) * speed);
+
+        // Lose mode
+        if (!player.GetWinOn())
+        {
+            ball.AddForce(new Vector3(distanceX * (4) * 0.2f, distanceY * (15.5f) * 0.1f, distanceZ * (2.8f) * 0.2f) * speed);
+            ball.AddTorque(new Vector3(distanceX * (4) * 7.1f, distanceY * (15.5f) * 7f, distanceZ * (2.8f) * 4.3f) * speed);
+        }
+        // Win mode
+        if (player.GetWinOn())
+        {
+            ball.AddForce(new Vector3(distanceX * (5) * 0.2f, distanceY * (20.5f) * 0.1f, distanceZ * (2) * 0.2f) * speed);
+            ball.AddTorque(new Vector3(distanceX * (5) * 7.1f, distanceY * (20.5f) * 7f, distanceZ * (2) * 4.3f) * speed);
+        }
         //
 
         //Normal Game
@@ -110,9 +116,8 @@ public class GameController : MonoBehaviour {
             if (temp <= 0)
             {
                 canSwipe = false;
-                gameDone = true;
-                resultsPanel.SetActive(true);
-                GameResults();
+                player.SetGameDone(true);
+                GameResults(player.GetPlayerId(), player.GetScore());
             }
             minutes = ((int)temp / 60).ToString();
             seconds = (temp % 60).ToString("f1");
@@ -122,9 +127,10 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void GameResults()
+    public void GameResults(string userName, int score)
     {
-        resultsText.text = "Your time is UP ! \n\nUsername: " + Regex.Replace(player.GetPlayerId(), @"[^a-zA-Z]", "") + "\nScore: " + player.GetScore();
+        resultsPanel.SetActive(true);
+        resultsText.text = "Your time is UP ! \n\nUsername: " + Regex.Replace(userName, @"[^a-zA-Z]", "") + "\nScore: " + score;
                             //resultsText.text = "Your time is UP ! \n\nUsername: " + player.GetPlayerId() + "\nScore: " +
                             //player.GetScore() + "\nTime: " + player.GetTime() +
                             //"\nNumber of throws: " + player.GetThrows();
@@ -133,5 +139,10 @@ public class GameController : MonoBehaviour {
     public void EndSurvey ()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void WinToggle (bool state)
+    {
+            player.SetWinOn(state);
     }
 }

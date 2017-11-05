@@ -9,11 +9,13 @@ public class DetectedScript : MonoBehaviour, ITrackableEventHandler
     public string LostText = "Please Find the Astronaut marker !";
     public Text InfoText;
     private TrackableBehaviour mTrackableBehaviour;
+    private Player player;
     //private Basketball ball;
 
     //TODO: fix the ball not reseting by creating a bigger second boundary
     void Start () {
         //ball = ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Basketball>();
+        player = StartScreen.player;
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
@@ -21,23 +23,32 @@ public class DetectedScript : MonoBehaviour, ITrackableEventHandler
         }
     }
 
+    public void Update()
+    {
+        if (player.GetGameDone())
+        {
+            InfoText.text = "";
+        }
+    }
+
     public void OnTrackableStateChanged(
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
     {
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED)
+        if (!player.GetGameDone())
         {
-            //ball.Show();
-            GameObject.FindGameObjectWithTag("Ball").GetComponent<Basketball>().ResetPositionCamera();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = true;
-            InfoText.text = "";
-        }
-        else
-        {
-            //ball.Hide();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = false;
-            InfoText.text = LostText;
+            if (newStatus == TrackableBehaviour.Status.DETECTED ||
+                newStatus == TrackableBehaviour.Status.TRACKED)
+            {
+                GameObject.FindGameObjectWithTag("Ball").GetComponent<Basketball>().ResetPositionCamera();
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = true;
+                InfoText.text = "";
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = false;
+                InfoText.text = LostText;
+            }
         }
     }
 }

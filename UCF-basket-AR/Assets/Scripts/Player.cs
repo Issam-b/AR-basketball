@@ -10,11 +10,12 @@ public class Player {
     private int Throws = 0;
     private float Time = 0f;
     private string PlayerId;
-    private bool CheatOn = false;
+    private bool WinOn = false;
+    private bool gameDone = false;
     private List<string> questions = new List<string>();
     private int[,] answers = new int[2,10];
     private DatabaseReference reference, player, playerStats, playerAns1, playerAns2, playerScore;
-    private DatabaseReference playerTime, playerThrows, playerCheatOn;
+    private DatabaseReference playerTime, playerThrows, playerCheatOn, playerGameDone;
     private DatabaseReference questionsRef, answersRef;
     private int numQuests;
     DataSnapshot snapshot;
@@ -31,7 +32,8 @@ public class Player {
         playerScore = reference.Child(this.PlayerId).Child("GameStats").Child("Score");
         playerTime = reference.Child(this.PlayerId).Child("GameStats").Child("Time");
         playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
-        playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("CheatOn");
+        playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("WinOn");
+        playerGameDone = reference.Child(this.PlayerId).Child("GameStats").Child("GameDone");
         questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
@@ -48,8 +50,8 @@ public class Player {
         SetTime(0f);
         this.Throws = 0;
         SetThrows(0);
-        this.CheatOn = false;
-        SetCheatOn(false);
+        this.WinOn = false;
+        SetWinOn(false);
     }
 
     public void FetchQuests()
@@ -87,7 +89,7 @@ public class Player {
 
     public void Answer2(int qNumber, int answer)
     {
-        answers[1, qNumber] = answer;
+        answers[1, qNumber - 1] = answer;
         playerAns2.Child(qNumber.ToString()).SetValueAsync(answer);
     }
 
@@ -96,36 +98,54 @@ public class Player {
         this.Score = value;
         playerScore.SetValueAsync(value);
     }
+
     public int GetScore()
     {
         return this.Score;
     }
+
     public void SetThrows(int value)
     {
         this.Throws = value;
         playerThrows.SetValueAsync(value);
     }
+
     public int GetThrows()
     {
         return this.Throws;
     }
+
+    public void SetGameDone(bool value)
+    {
+        this.gameDone = value;
+        playerGameDone.SetValueAsync(value);
+    }
+
+    public bool GetGameDone()
+    {
+        return this.gameDone;
+    }
+
     public void SetTime(float value)
     {
         this.Time = value;
-        playerTime.SetValueAsync(value);
+        //playerTime.SetValueAsync(value);
     }
+
     public float GetTime()
     {
         return this.Time;
     }
-    public void SetCheatOn(bool value)
+
+    public void SetWinOn(bool value)
     {
-        this.CheatOn = value;
+        this.WinOn = value;
         playerCheatOn.SetValueAsync(value);
     }
-    public bool GetCheatOn()
+
+    public bool GetWinOn()
     {
-        return this.CheatOn;
+        return this.WinOn;
     }
 
     public string GetPlayerId ()

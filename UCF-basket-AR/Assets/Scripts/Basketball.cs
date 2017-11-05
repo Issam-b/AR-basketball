@@ -8,6 +8,7 @@ public class Basketball : MonoBehaviour {
     public float threshHold = 4;
     Transform cameraTransform;
     Vector3 offset;
+    private Player player;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class Basketball : MonoBehaviour {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //InitialPosition = this.transform.position;
         ResetPositionCamera();
+        player = StartScreen.player;
     }
 
     private void Update()
@@ -50,7 +52,15 @@ public class Basketball : MonoBehaviour {
 
         if (other.gameObject.tag == "Border")
         {
-            ResetPositionCamera();
+            if (!player.GetGameDone())
+            {
+                ResetPositionCamera();
+            }
+            else if (player.GetGameDone())
+            {
+                //GameController.resultsPanel.SetActive(true);
+                gameController.GameResults(player.GetPlayerId(), player.GetScore());
+            }
         }
     }
 }
