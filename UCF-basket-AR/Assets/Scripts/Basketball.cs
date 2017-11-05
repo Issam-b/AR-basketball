@@ -9,6 +9,7 @@ public class Basketball : MonoBehaviour {
     Transform cameraTransform;
     Vector3 offset;
     private Player player;
+    public AudioSource swishSound, bounceSound, bellSound, DoneSound;
 
     private void Start()
     {
@@ -48,19 +49,26 @@ public class Basketball : MonoBehaviour {
         if (other.gameObject.tag == "Ring")
         {
             gameController.UpdateScore();
+            swishSound.Play();
         }
 
-        if (other.gameObject.tag == "Border")
+        else if (other.gameObject.tag == "Border")
         {
             if (!player.GetGameDone())
             {
                 ResetPositionCamera();
+                bellSound.Play();
             }
             else if (player.GetGameDone())
             {
                 //GameController.resultsPanel.SetActive(true);
                 gameController.GameResults(player.GetPlayerId(), player.GetScore());
+                DoneSound.Play();
             }
+        }
+        else
+        {
+            bounceSound.Play();
         }
     }
 }
