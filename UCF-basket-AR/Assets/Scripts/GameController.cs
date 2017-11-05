@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
     public GameObject resultsPanel;
 
     private float distanceX, distanceY, distanceZ;
-
+    public AudioSource DoneSound;
 
     private Player player;
 
@@ -124,6 +124,7 @@ public class GameController : MonoBehaviour {
                 canSwipe = false;
                 player.SetGameDone(true);
                 GameResults(player.GetPlayerId(), player.GetScore());
+                DoneSound.Play();
             }
             minutes = ((int)temp / 60).ToString();
             seconds = (temp % 60).ToString("f1");
