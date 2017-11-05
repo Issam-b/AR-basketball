@@ -66,13 +66,13 @@ public class Player {
             else if (task.IsCompleted)
             {
                 snapshot = task.Result;
-                if (snapshot.Child(1.ToString()).Value.ToString() != null)
+                if (snapshot.Child("q" + 1.ToString()).Value.ToString() != null)
                 {
                     QuestsNumber = 1;
-                    while (snapshot.Child(QuestsNumber.ToString()).Value.ToString() != null)
+                    while (snapshot.Child("q" + QuestsNumber.ToString()).Value.ToString() != null)
                     {
-                        Debug.Log(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
-                        questions.Add(snapshot.Child(QuestsNumber.ToString()).Value.ToString());
+                        Debug.Log(snapshot.Child("q" + QuestsNumber.ToString()).Value.ToString());
+                        questions.Add(snapshot.Child("q" + QuestsNumber.ToString()).Value.ToString());
                         QuestsNumber++;
                     }
                     Debug.Log("Questions fetched");
@@ -84,13 +84,13 @@ public class Player {
     public void Answer1(int qNumber, int answer)
     {
         answers[1, qNumber - 1] = answer;
-        playerAns1.Child(qNumber.ToString()).SetValueAsync(answer);
+        playerAns1.Child("a" + qNumber.ToString()).SetValueAsync(answer);
     }
 
     public void Answer2(int qNumber, int answer)
     {
         answers[1, qNumber - 1] = answer;
-        playerAns2.Child(qNumber.ToString()).SetValueAsync(answer);
+        playerAns2.Child("a" + qNumber.ToString()).SetValueAsync(answer);
     }
 
     public void SetScore(int value)
