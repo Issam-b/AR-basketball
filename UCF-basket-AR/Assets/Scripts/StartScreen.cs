@@ -58,10 +58,13 @@ public class StartScreen : MonoBehaviour {
             waited++;
         else
         {
-            login.SetActive(false);
-            survey1.SetActive(true);
             Debug.Log("Ftech question: 1");
             FetchNextQuestion(1);
+            login.SetActive(false);
+            survey1.SetActive(true);
+            
+            // TODO:change this for development only
+            //StartGame();
             CancelInvoke("FirstQuestion");
 
         }

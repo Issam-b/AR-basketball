@@ -10,7 +10,7 @@ public class Player {
     private int Throws = 0;
     private float Time = 0f;
     private string PlayerId;
-    private bool WinOn = false;
+    private bool WinOn = true;
     private bool gameDone = false;
     private List<string> questions = new List<string>();
     private int[,] answers = new int[2,10];
