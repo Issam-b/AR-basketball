@@ -171,6 +171,22 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.053265892
       objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: e8bf95dc35df0fd43aab273d060533a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.84359
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: e8bf95dc35df0fd43aab273d060533a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.8517
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e8bf95dc35df0fd43aab273d060533a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e8bf95dc35df0fd43aab273d060533a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8bf95dc35df0fd43aab273d060533a7, type: 3}
   m_IsPrefabParent: 0
@@ -300,6 +316,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120038845}
+--- !u!1 &227581332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 227581333}
+  m_Layer: 0
+  m_Name: target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227581333
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227581332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.35, y: -16.67, z: 13.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3809961}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249876477
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +692,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 618455518}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0895da27cd7aebe479c59038a873139c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -671,7 +715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &667857895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -747,7 +791,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &687944811
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +843,15 @@ MonoBehaviour:
   resultsText: {fileID: 2044319111}
   resultsPanel: {fileID: 437683152}
   DoneSound: {fileID: 687944814}
+  net: {fileID: 227581332}
+  angle: 10
+  _time: 1
+  _repeat: 1
+  _startVelocity: {x: 0, y: 0, z: 0}
+  _speed: {x: 0, y: 0, z: 0}
+  _elapsed: 0
+  initialTarget: {x: 0, y: 0, z: 0}
+  angleDiff: 0
 --- !u!82 &687944814
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2004,7 +2057,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1125831272}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0.03, y: -16.64, z: 8.91}
+  m_LocalPosition: {x: 0.03, y: -15.84, z: 8.91}
   m_LocalScale: {x: 1.6640695, y: 1.6640708, z: 1.6640708}
   m_Children: []
   m_Father: {fileID: 3809961}
@@ -2662,7 +2715,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1464914229}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0895da27cd7aebe479c59038a873139c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

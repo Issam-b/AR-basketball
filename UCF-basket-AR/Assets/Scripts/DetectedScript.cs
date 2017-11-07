@@ -43,6 +43,8 @@ public class DetectedScript : MonoBehaviour, ITrackableEventHandler
                 GameObject.FindGameObjectWithTag("Ball").GetComponent<Basketball>().ResetPositionCamera();
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = true;
                 InfoText.text = "";
+
+                //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().initialTarget = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().net.transform.position;
             }
             else
             {

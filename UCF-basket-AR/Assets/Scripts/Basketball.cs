@@ -30,6 +30,8 @@ public class Basketball : MonoBehaviour {
 
     public void ResetPositionCamera()
     {
+        //gameController.initialTarget = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().net.transform.position;
+
         offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -9f, 17.3f);
         cameraTransform = Camera.main.transform;
 
@@ -68,6 +70,8 @@ public class Basketball : MonoBehaviour {
         }
         else
         {
+            //gameController.ball.velocity = Vector3.zero;
+            //gameController.ball.isKinematic = true;
             bounceSound.Play();
         }
     }
