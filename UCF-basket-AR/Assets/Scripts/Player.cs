@@ -10,7 +10,7 @@ public class Player {
     private int Throws = 0;
     private float Time = 0f;
     private string PlayerId;
-    private bool WinOn = true;
+    private bool WinOn;
     private bool gameDone = false;
     private List<string> questions = new List<string>();
     private int[,] answers = new int[2,10];
@@ -50,8 +50,8 @@ public class Player {
         SetTime(0f);
         this.Throws = 0;
         SetThrows(0);
-        this.WinOn = false;
-        SetWinOn(false);
+        this.WinOn = true;
+        SetWinOn(true);
     }
 
     public void FetchQuests()
