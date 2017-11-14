@@ -1,0 +1,1376 @@
+   {
+  "000455": {
+    "name": "000455",
+    "connected": true,
+    "points": {
+      "DEV1.LANGUAGE": {
+        "name": "DEV1.LANGUAGE",
+        "description": "Language (0=FINNISH, 1=ENGLISH, 2=SWEDISH)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.FACTORY_SETTINGS": {
+        "name": "DEV1.FACTORY_SETTINGS",
+        "description": "Factory settings restoring (0=OK/RESTORE DONE, 1=RESTORE SETTINGS)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.ACK_ALARMS": {
+        "name": "DEV1.ACK_ALARMS",
+        "description": "Alarm acknowledging (0=WAITING FOR ACKNOWLEDGEMENT, 1=OK/ACKNOWLEDGE)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.ALARM_COUNT": {
+        "name": "DEV1.ALARM_COUNT",
+        "description": "Active alarm count",
+        "value": "1",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SUM_ALARM": {
+        "name": "DEV1.SUM_ALARM",
+        "description": "Sum alarm (0=No active unacknowledged alarms, 1=Alarm active and unacknowledged)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.MULTI_FW_VER": {
+        "name": "DEV1.MULTI_FW_VER",
+        "description": "Multi24 firmware version",
+        "value": "2.50",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.MULTI_SW_VER": {
+        "name": "DEV1.MULTI_SW_VER",
+        "description": "Multi24 application softwareversion",
+        "value": "1.01",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.MULTI_BL_VER": {
+        "name": "DEV1.MULTI_BL_VER",
+        "description": "Multi24 bootloader version",
+        "value": "2.34",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.LUX_M": {
+        "name": "DEV1.LUX_M",
+        "description": "Outdoor brightness",
+        "value": "238",
+        "unit": "Lx",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE00_M": {
+        "name": "DEV1.TE00_M",
+        "description": "Temperature measurement, outdoor temperature",
+        "value": "22.9",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE1_M": {
+        "name": "DEV1.TE1_M",
+        "description": "Temperature measurement, indoor temperature 1 (+correction)",
+        "value": "23.7",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE2_M": {
+        "name": "DEV1.TE2_M",
+        "description": "Temperature measurement, indoor temperature 2",
+        "value": "23.7",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE3_M": {
+        "name": "DEV1.TE3_M",
+        "description": "Temperature measurement, indoor temperature 3",
+        "value": "23.1",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE4_M": {
+        "name": "DEV1.TE4_M",
+        "description": "Temperature measurement, indoor temperature 4",
+        "value": "23.8",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE5_M": {
+        "name": "DEV1.TE5_M",
+        "description": "Temperature measurement, indoor temperature 5",
+        "value": "23.3",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE6_M": {
+        "name": "DEV1.TE6_M",
+        "description": "Temperature measurement, indoor temperature 6",
+        "value": "23.4",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE7_M": {
+        "name": "DEV1.TE7_M",
+        "description": "Temperature measurement, indoor temperature 7",
+        "value": "-0.1",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE8_M": {
+        "name": "DEV1.TE8_M",
+        "description": "Temperature measurement, indoor temperature 8",
+        "value": "-0.1",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.TE1_DEF_S": {
+        "name": "DEV1.TE1_DEF_S",
+        "description": "Setpoint, indoor temperature 1, deviation",
+        "value": "10",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE2_DEF_S": {
+        "name": "DEV1.TE2_DEF_S",
+        "description": "Setpoint, indoor temperature 2, deviation",
+        "value": "10",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE3_DEF_S": {
+        "name": "DEV1.TE3_DEF_S",
+        "description": "Setpoint, indoor temperature 3, deviation",
+        "value": "12",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE4_DEF_S": {
+        "name": "DEV1.TE4_DEF_S",
+        "description": "Setpoint, indoor temperature 4, deviation",
+        "value": "12",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE5_DEF_S": {
+        "name": "DEV1.TE5_DEF_S",
+        "description": "Setpoint, indoor temperature 5, deviation",
+        "value": "10",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE6_DEF_S": {
+        "name": "DEV1.TE6_DEF_S",
+        "description": "Setpoint, indoor temperature 6, deviation",
+        "value": "11",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE7_DEF_S": {
+        "name": "DEV1.TE7_DEF_S",
+        "description": "Setpoint, indoor temperature 7, deviation",
+        "value": "10",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE8_DEF_S": {
+        "name": "DEV1.TE8_DEF_S",
+        "description": "Setpoint, indoor temperature 8, deviation",
+        "value": "10",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE1_FS": {
+        "name": "DEV1.TE1_FS",
+        "description": "Fictive setting, indoor temperature 1",
+        "value": "21.5",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE2_FS": {
+        "name": "DEV1.TE2_FS",
+        "description": "Fictive setting, indoor temperature 2",
+        "value": "21.5",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE3_FS": {
+        "name": "DEV1.TE3_FS",
+        "description": "Fictive setting, indoor temperature 3",
+        "value": "22.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE4_FS": {
+        "name": "DEV1.TE4_FS",
+        "description": "Fictive setting, indoor temperature 4",
+        "value": "22.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE5_FS": {
+        "name": "DEV1.TE5_FS",
+        "description": "Fictive setting, indoor temperature 5",
+        "value": "21.5",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE6_FS": {
+        "name": "DEV1.TE6_FS",
+        "description": "Fictive setting, indoor temperature 6",
+        "value": "21.8",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE7_FS": {
+        "name": "DEV1.TE7_FS",
+        "description": "Fictive setting, indoor temperature 7",
+        "value": "21.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE8_FS": {
+        "name": "DEV1.TE8_FS",
+        "description": "Fictive setting, indoor temperature 8",
+        "value": "21.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE1_NAME_FS": {
+        "name": "DEV1.TE1_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 1 name (0=NOT IN USE)",
+        "value": "1",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE2_NAME_FS": {
+        "name": "DEV1.TE2_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 2 name (0=NOT IN USE)",
+        "value": "8",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE3_NAME_FS": {
+        "name": "DEV1.TE3_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 3 name (0=NOT IN USE)",
+        "value": "10",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE4_NAME_FS": {
+        "name": "DEV1.TE4_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 4 name (0=NOT IN USE)",
+        "value": "4",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE5_NAME_FS": {
+        "name": "DEV1.TE5_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 5 name (0=NOT IN USE)",
+        "value": "15",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE6_NAME_FS": {
+        "name": "DEV1.TE6_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 6 name (0=NOT IN USE)",
+        "value": "9",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE7_NAME_FS": {
+        "name": "DEV1.TE7_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 7 name (0=NOT IN USE)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE8_NAME_FS": {
+        "name": "DEV1.TE8_NAME_FS",
+        "description": "Fictive setting, heat-regulating circuit 8 name (0=NOT IN USE)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE1_FO": {
+        "name": "DEV1.TE1_FO",
+        "description": "Fictive control, indoor temperature 1 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE2_FO": {
+        "name": "DEV1.TE2_FO",
+        "description": "Fictive control, indoor temperature 2 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE3_FO": {
+        "name": "DEV1.TE3_FO",
+        "description": "Fictive control, indoor temperature 4 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE4_FO": {
+        "name": "DEV1.TE4_FO",
+        "description": "Fictive control, indoor temperature 4 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE5_FO": {
+        "name": "DEV1.TE5_FO",
+        "description": "Fictive control, indoor temperature 5 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE6_FO": {
+        "name": "DEV1.TE6_FO",
+        "description": "Fictive control, indoor temperature 6 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE7_FO": {
+        "name": "DEV1.TE7_FO",
+        "description": "Fictive control, indoor temperature 7 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE8_FO": {
+        "name": "DEV1.TE8_FO",
+        "description": "Fictive control, indoor temperature 8 (0=STANDBY, 1=HEATING, 2=COOLING, 3=COOLING ON HOLD)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE_AVG_FM": {
+        "name": "DEV1.TE_AVG_FM",
+        "description": "Fictive measurement, indoor temperature average",
+        "value": "23.5",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE_COUNT_FS": {
+        "name": "DEV1.TE_COUNT_FS",
+        "description": "Fiktiivinen setting, number of heat-regulating circuits",
+        "value": "6",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE45_M": {
+        "name": "DEV1.TE45_M",
+        "description": "Temperature measurement, garage return water",
+        "value": "-50.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": true
+      },
+      "DEV1.LEAK1_I": {
+        "name": "DEV1.LEAK1_I",
+        "description": "Leakage-control loop 1",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.LEAK2_I": {
+        "name": "DEV1.LEAK2_I",
+        "description": "Leakage-control loop 2",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.FIRE_I": {
+        "name": "DEV1.FIRE_I",
+        "description": "Firealarm alarm information",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SECURITY_DOOR_I": {
+        "name": "DEV1.SECURITY_DOOR_I",
+        "description": "Security alarm, door loop",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SECURITY_IR_I": {
+        "name": "DEV1.SECURITY_IR_I",
+        "description": "Security alarm, IR motion sensors",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SECURITY_KEYPAD_I": {
+        "name": "DEV1.SECURITY_KEYPAD_I",
+        "description": "Security alarm, keypad",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.IVK_ALARM_I": {
+        "name": "DEV1.IVK_ALARM_I",
+        "description": "Indication, IVK-alarm",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TV1_YC": {
+        "name": "DEV1.TV1_YC",
+        "description": "Control method, heating system 1 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV1_Y": {
+        "name": "DEV1.TV1_Y",
+        "description": "Control, heating system 1",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV2_YC": {
+        "name": "DEV1.TV2_YC",
+        "description": "Control method, heating system 2 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV2_Y": {
+        "name": "DEV1.TV2_Y",
+        "description": "Control, heating system 2",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV3_YC": {
+        "name": "DEV1.TV3_YC",
+        "description": "Control method, heating system 3 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV3_Y": {
+        "name": "DEV1.TV3_Y",
+        "description": "Control, heating system 3",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV4_YC": {
+        "name": "DEV1.TV4_YC",
+        "description": "Control method, heating system 4 (0=AUTO,1=METHOD)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV4_Y": {
+        "name": "DEV1.TV4_Y",
+        "description": "Control, heating system 4",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV5_YC": {
+        "name": "DEV1.TV5_YC",
+        "description": "Control method, heating system 5 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV5_Y": {
+        "name": "DEV1.TV5_Y",
+        "description": "Control, heating system 5",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV6_YC": {
+        "name": "DEV1.TV6_YC",
+        "description": "Control method, heating system 6 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV6_Y": {
+        "name": "DEV1.TV6_Y",
+        "description": "Control, heating system 6",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV7_YC": {
+        "name": "DEV1.TV7_YC",
+        "description": "Control method, heating system 7 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV7_Y": {
+        "name": "DEV1.TV7_Y",
+        "description": "Control, heating system 7",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV8_YC": {
+        "name": "DEV1.TV8_YC",
+        "description": "Control method, heating system 8 (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV8_Y": {
+        "name": "DEV1.TV8_Y",
+        "description": "Control, heating system 8",
+        "value": "0.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.HOME_AWAY_ELECTR_OC": {
+        "name": "DEV1.HOME_AWAY_ELECTR_OC",
+        "description": "Control method, safety sockets (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.HOME_AWAY_ELECTR_O": {
+        "name": "DEV1.HOME_AWAY_ELECTR_O",
+        "description": "Control, safety sockets (home/away-control)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TV_MAIN_WATER_O": {
+        "name": "DEV1.TV_MAIN_WATER_O",
+        "description": "Control, mainwater lock",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_O": {
+        "name": "DEV1.CAR_HEATING_O",
+        "description": "Control, car heating socket (contactor)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.SECURITY_SIREN_O": {
+        "name": "DEV1.SECURITY_SIREN_O",
+        "description": "Control, security alarm siren",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED_YC": {
+        "name": "DEV1.IVK_SPEED_YC",
+        "description": "Contol method, IV-speedcontrol (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": " ",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED_Y": {
+        "name": "DEV1.IVK_SPEED_Y",
+        "description": "Control, IV-speedcontrol",
+        "value": "90.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_COOL_PUMP_OC": {
+        "name": "DEV1.TE_COOL_PUMP_OC",
+        "description": "Control method, cooling network pump (0=AUTO,1=MANUAL)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_COOL_PUMP_O": {
+        "name": "DEV1.TE_COOL_PUMP_O",
+        "description": "Control, cooling network pump",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT1_CONTROL_O": {
+        "name": "DEV1.LIGHT1_CONTROL_O",
+        "description": "Control, light group 1",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT2_CONTROL_O": {
+        "name": "DEV1.LIGHT2_CONTROL_O",
+        "description": "Control, light group 2",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.MOD1_TE_COUNT_S": {
+        "name": "DEV1.MOD1_TE_COUNT_S",
+        "description": "Setpoint, module 1 number of heat-regulating circuits",
+        "value": "2",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.MOD2_TE_COUNT_S": {
+        "name": "DEV1.MOD2_TE_COUNT_S",
+        "description": "Setpoint, module 2 number of heat-regulating circuits",
+        "value": "4",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.MOD1_TE1_TYPE_S": {
+        "name": "DEV1.MOD1_TE1_TYPE_S",
+        "description": "Setpoint, module 1 temperature measurement 1 type (0=EXTERNAL SENSOR, 1=DISPLAY SENSOR)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.MOD2_TE1_TYPE_S": {
+        "name": "DEV1.MOD2_TE1_TYPE_S",
+        "description": "Setpoint, module 1 temperature measurement 1 type (0=EXTERNAL SENSOR, 1=DISPLAY SENSOR)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.DISP1_TE_OFFSET_S": {
+        "name": "DEV1.DISP1_TE_OFFSET_S",
+        "description": "Setpoint, display 1 room temperature correction",
+        "value": "0.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.DISP2_TE_OFFSET_S": {
+        "name": "DEV1.DISP2_TE_OFFSET_S",
+        "description": "Setpoint, display 2 room temperature correction",
+        "value": "0.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE1_NAME_S": {
+        "name": "DEV1.TE1_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 1 name",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE2_NAME_S": {
+        "name": "DEV1.TE2_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 1 name",
+        "value": "8",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE3_NAME_S": {
+        "name": "DEV1.TE3_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 3 name",
+        "value": "10",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE4_NAME_S": {
+        "name": "DEV1.TE4_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 4 name",
+        "value": "4",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE5_NAME_S": {
+        "name": "DEV1.TE5_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 5 name",
+        "value": "15",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE6_NAME_S": {
+        "name": "DEV1.TE6_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 6 name",
+        "value": "9",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE7_NAME_S": {
+        "name": "DEV1.TE7_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 7 name",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE8_NAME_S": {
+        "name": "DEV1.TE8_NAME_S",
+        "description": "Setpoint, heat-regulating circuit 8 name",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_COOL_ENABLE_S": {
+        "name": "DEV1.TE_COOL_ENABLE_S",
+        "description": "Setpoint, cooling (0=DISABLED, 1=ENABLED)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_P_S": {
+        "name": "DEV1.TE_P_S",
+        "description": "Setpoint, P-area / room temperature control (default 3.0 °C)",
+        "value": "3.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_I_S": {
+        "name": "DEV1.TE_I_S",
+        "description": "Setpoint, I-time / room temperature control (default 10 min)",
+        "value": "10",
+        "unit": "min",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_DEADZONE_S": {
+        "name": "DEV1.TE_DEADZONE_S",
+        "description": "Setpoint, temperature control deadzone (default 1.0 °C)",
+        "value": "1.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_S_LL": {
+        "name": "DEV1.TE_S_LL",
+        "description": "Setpoint, temperature-setting lower limit (Note! +-deadzone)",
+        "value": "19.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_S_HL": {
+        "name": "DEV1.TE_S_HL",
+        "description": "Setpoint, temperature-setting upper limit (Note! +-deadzone)",
+        "value": "24.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED_S": {
+        "name": "DEV1.IVK_SPEED_S",
+        "description": "Setpoint, IV-speedcontrol (1=MIN, 2=NORM, 3=MAX)",
+        "value": "3",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED1_S": {
+        "name": "DEV1.IVK_SPEED1_S",
+        "description": "Setpoint, IV-machine power on speed 1",
+        "value": "30.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED2_S": {
+        "name": "DEV1.IVK_SPEED2_S",
+        "description": "Setpoint, IV-machine power on speed 2",
+        "value": "60.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_SPEED3_S": {
+        "name": "DEV1.IVK_SPEED3_S",
+        "description": "Setpoint, IV-machine power on speed 3",
+        "value": "90.0",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.IVK_TYPE_S": {
+        "name": "DEV1.IVK_TYPE_S",
+        "description": "Setpoint, ventilation(IV) control type (0=DISABLED, 1=ANALOG 0-10V, 2=VALLOX CHANNEL)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.HOME_STATE_S": {
+        "name": "DEV1.HOME_STATE_S",
+        "description": "Setpoint, Home-state",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.HOME_IVK_SPEED_S": {
+        "name": "DEV1.HOME_IVK_SPEED_S",
+        "description": "Setpoint, ventilation(IV) speed in Home-state",
+        "value": "2",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.AWAY_TEMP_DROP_S": {
+        "name": "DEV1.AWAY_TEMP_DROP_S",
+        "description": "Setpoint, temperature drop in Away-state",
+        "value": "0.5",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.AWAY_IVK_SPEED_S": {
+        "name": "DEV1.AWAY_IVK_SPEED_S",
+        "description": "Setpoint, ventilation(IV) speed in Away-state",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.AWAY_WATER_ENABLE_S": {
+        "name": "DEV1.AWAY_WATER_ENABLE_S",
+        "description": "Setpoint, water valve in Away-state",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.FARAWAY_TEMP_DROP_S": {
+        "name": "DEV1.FARAWAY_TEMP_DROP_S",
+        "description": "Setpoint, temperature drop in long Away-state",
+        "value": "2.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.FARAWAY_IVK_SPEED_S": {
+        "name": "DEV1.FARAWAY_IVK_SPEED_S",
+        "description": "Setpoint, ventilation(IV) speed in long Away-state",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.FARAWAY_WATER_ENABLE_S": {
+        "name": "DEV1.FARAWAY_WATER_ENABLE_S",
+        "description": "Setpoint, water valve in long Away-state",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.PARTY_TEMP_DROP_S": {
+        "name": "DEV1.PARTY_TEMP_DROP_S",
+        "description": "Setpoint, temperature drop in Party-state",
+        "value": "0.5",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.PARTY_IVK_SPEED_S": {
+        "name": "DEV1.PARTY_IVK_SPEED_S",
+        "description": "Setpoint, ventilation(IV) speed in Party-state",
+        "value": "3",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.DISP_STANDBY_BRIGHT_S": {
+        "name": "DEV1.DISP_STANDBY_BRIGHT_S",
+        "description": "Setpoint, display sleep mode brightness",
+        "value": "15",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.DISP_BRIGHT_S": {
+        "name": "DEV1.DISP_BRIGHT_S",
+        "description": "Setpoint, display normal mode brightness",
+        "value": "100",
+        "unit": "%",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_TE00_S": {
+        "name": "DEV1.CAR_HEATING_TE00_S",
+        "description": "Setpoint, car heating outdoor temperature limit",
+        "value": "5.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_LIMIT_S": {
+        "name": "DEV1.CAR_HEATING_LIMIT_S",
+        "description": "Setpoint, car heating outdoor temperature limiting (0=DISABLED, 1=ENABLED)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_TIMER_S": {
+        "name": "DEV1.CAR_HEATING_TIMER_S",
+        "description": "Setpoint, car heating timer (0=OFF, 1=ON)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_TIME_S": {
+        "name": "DEV1.CAR_HEATING_TIME_S",
+        "description": "Setpoint, car heating time (minutes)",
+        "value": "120",
+        "unit": "min",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_MODE_S": {
+        "name": "DEV1.CAR_HEATING_MODE_S",
+        "description": "Setpoint, car heating control mode (0=OFF, 1=ON, 2=TIMER)",
+        "value": "2",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT1_CONTROL_MODE_S": {
+        "name": "DEV1.LIGHT1_CONTROL_MODE_S",
+        "description": "Setpoint, light group 1 control mode (0=OFF, 1=ON, 2=TIMER)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT1_CONTROL_LIMIT_S": {
+        "name": "DEV1.LIGHT1_CONTROL_LIMIT_S",
+        "description": "Setpoint, light group 1 brightness limit (0=DISABLED, 1=ENABLED)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT2_CONTROL_MODE_S": {
+        "name": "DEV1.LIGHT2_CONTROL_MODE_S",
+        "description": "Setpoint, light group 2 control mode (0=OFF, 1=ON, 2=TIMER)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT2_CONTROL_LIMIT_S": {
+        "name": "DEV1.LIGHT2_CONTROL_LIMIT_S",
+        "description": "Setpoint, light group 2 brightness limit (0=DISABLED, 1=ENABLED)",
+        "value": "1",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT_CONTROL_LUX_S": {
+        "name": "DEV1.LIGHT_CONTROL_LUX_S",
+        "description": "Setpoint, outdoor lighting brightness limit",
+        "value": "110",
+        "unit": "Lx",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE45_ALARM_LIMIT_S": {
+        "name": "DEV1.TE45_ALARM_LIMIT_S",
+        "description": "Setpoint, garage return water alarm limit",
+        "value": "5.0",
+        "unit": "°C",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.SECURITY_ACTIVATION_S": {
+        "name": "DEV1.SECURITY_ACTIVATION_S",
+        "description": "Security alarm, activation (0=DISABLED, 1=SEMI CONTROL, 2=FULL CONTROL)",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_P": {
+        "name": "DEV1.CAR_HEATING_P",
+        "description": "Timer program, car heating",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT1_P": {
+        "name": "DEV1.LIGHT1_P",
+        "description": "Timer program, lighting 1",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.LIGHT2_P": {
+        "name": "DEV1.LIGHT2_P",
+        "description": "Timer program, lighting 2",
+        "value": "0",
+        "unit": "",
+        "readOnly": false,
+        "trend": false
+      },
+      "DEV1.TE_DROP_FS": {
+        "name": "DEV1.TE_DROP_FS",
+        "description": "Fictive setting, temperature drop",
+        "value": "0.0",
+        "unit": "°C",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SECURITY_STATE_FI": {
+        "name": "DEV1.SECURITY_STATE_FI",
+        "description": "Security control state (0=DISABLED, 1=DEPATURE DELAY, 2=SEMI CONTROL, 3=FULL CONTROL, 4=ARRIVAL DELAY, 5=ALARM)",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.CAR_HEATING_FO": {
+        "name": "DEV1.CAR_HEATING_FO",
+        "description": "Fictive control, car heating (0=DISABLED, 1=ENABLED/INACTIVE, 2=PENABLED/ACTIVE, 3=TIMER/INACTIVE, 4=TIMER/INACTIVE, 5=CLOCK/INACTIVE, 6=CLOCK/INACTIVE)",
+        "value": "5",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.ALARM_SYMBOL": {
+        "name": "DEV1.ALARM_SYMBOL",
+        "description": "Alarm symbol, info point for display",
+        "value": "1",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TV_MANUAL_CONTROL": {
+        "name": "DEV1.TV_MANUAL_CONTROL",
+        "description": "Valve manual control, info point for display",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.IVK_MANUAL_CONTROL": {
+        "name": "DEV1.IVK_MANUAL_CONTROL",
+        "description": "IV-machine, info point for display",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE1_SENSOR_FAULT": {
+        "name": "DEV1.TE1_SENSOR_FAULT",
+        "description": "Sensor fault, TE1",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE2_SENSOR_FAULT": {
+        "name": "DEV1.TE2_SENSOR_FAULT",
+        "description": "Sensor fault, TE2",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE3_SENSOR_FAULT": {
+        "name": "DEV1.TE3_SENSOR_FAULT",
+        "description": "Sensor fault, TE3",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE4_SENSOR_FAULT": {
+        "name": "DEV1.TE4_SENSOR_FAULT",
+        "description": "Sensor fault, TE4",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE5_SENSOR_FAULT": {
+        "name": "DEV1.TE5_SENSOR_FAULT",
+        "description": "Sensor fault, TE5",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE6_SENSOR_FAULT": {
+        "name": "DEV1.TE6_SENSOR_FAULT",
+        "description": "Sensor fault, TE6",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE7_SENSOR_FAULT": {
+        "name": "DEV1.TE7_SENSOR_FAULT",
+        "description": "Sensor fault, TE7",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE8_SENSOR_FAULT": {
+        "name": "DEV1.TE8_SENSOR_FAULT",
+        "description": "Sensor fault, TE8",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE00_SENSOR_FAULT": {
+        "name": "DEV1.TE00_SENSOR_FAULT",
+        "description": "Sensor fault, TE00 outdoor temperature",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE1_ALARM": {
+        "name": "DEV1.TE1_ALARM",
+        "description": "Temperature alarm, TE1",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE2_ALARM": {
+        "name": "DEV1.TE2_ALARM",
+        "description": "Temperature alarm, TE2",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE3_ALARM": {
+        "name": "DEV1.TE3_ALARM",
+        "description": "Temperature alarm, TE3",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE4_ALARM": {
+        "name": "DEV1.TE4_ALARM",
+        "description": "Temperature alarm, TE4",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE5_ALARM": {
+        "name": "DEV1.TE5_ALARM",
+        "description": "Temperature alarm, TE5",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE6_ALARM": {
+        "name": "DEV1.TE6_ALARM",
+        "description": "Temperature alarm, TE6",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE7_ALARM": {
+        "name": "DEV1.TE7_ALARM",
+        "description": "Temperature alarm, TE7",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE8_ALARM": {
+        "name": "DEV1.TE8_ALARM",
+        "description": "Temperature alarm, TE8",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SENSOR_FAULT_ALARM": {
+        "name": "DEV1.SENSOR_FAULT_ALARM",
+        "description": "Sensor fault alarm",
+        "value": "0",
+        "unit": "",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.SECURITY_ALARM": {
+        "name": "DEV1.SECURITY_ALARM",
+        "description": "Security alarm",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.FIRE_ALARM": {
+        "name": "DEV1.FIRE_ALARM",
+        "description": "Fire alarm",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.LEAK_ALARM": {
+        "name": "DEV1.LEAK_ALARM",
+        "description": "Leakage alarm",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.ROOM_TE_ALARM": {
+        "name": "DEV1.ROOM_TE_ALARM",
+        "description": "Temperature alarm, room temperature",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.TE45_ALARM": {
+        "name": "DEV1.TE45_ALARM",
+        "description": "Temperature alarm, garage return water",
+        "value": "1",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.IVK_ALARM": {
+        "name": "DEV1.IVK_ALARM",
+        "description": "IV-machine alarm",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.MOD1_FAULT_ALARM": {
+        "name": "DEV1.MOD1_FAULT_ALARM",
+        "description": "Communication fault alarm, temperature control module 1",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      },
+      "DEV1.MOD2_FAULT_ALARM": {
+        "name": "DEV1.MOD2_FAULT_ALARM",
+        "description": "Communication fault alarm, temperature control module 2",
+        "value": "0",
+        "unit": " ",
+        "readOnly": true,
+        "trend": false
+      }
+    }
+  }
+}

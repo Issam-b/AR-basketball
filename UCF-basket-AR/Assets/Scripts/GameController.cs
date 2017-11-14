@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
     string minutes, seconds;
     private bool redTime = false, isRed = false;
 
+
     public Rigidbody ball;
     public Transform imageTarget;
     public float speed = 0.5f;
@@ -61,10 +62,13 @@ public class GameController : MonoBehaviour {
     float _timeStartThrust = 0f;                    /* Time the thrust force has been applied */
 
     bool _shootCompleted = false;               /* Register if the shoot has taken place */
+    public Vector3 initialTarget;
 
+    public float angleDiff; 
 
     private void Start()
     {
+
         resultsPanel.SetActive(false);
         player = StartScreen.player;
         timeText.text = "Time: 5:00.0";
@@ -91,6 +95,9 @@ public class GameController : MonoBehaviour {
             UpdateTime();
         }
 
+        //ball.transform.LookAt(net.transform);
+        //angleDiff = - Vector3.SignedAngle( ball.transform.right, - net.transform.right, gameObject.transform.up);
+        //Debug.Log(angleDiff);
         //
         //if (_shootCompleted) _elapsed = Time.time - _timeStartThrust;
         //_speed = ball.velocity;
@@ -220,9 +227,24 @@ public class GameController : MonoBehaviour {
         ball.isKinematic = false;
         ball.useGravity = true;
 
+        // get angle
+        angleDiff = - Vector3.SignedAngle(ball.transform.right, -net.transform.right, gameObject.transform.up);
+        Debug.Log(angleDiff);
+
+        //net.transform.position = new Vector3(initialTarget.x, net.transform.position.y, net.transform.position.z);
+
+        net.transform.position = new Vector3(initialTarget.x + (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+
+        //if (angleDiff < 45f & angleDiff > 0)
+           // net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+        //else if (angleDiff < 0 & angleDiff > -45f)
+            //net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+
+
         Vector3 forceDirection = net.transform.position - ball.transform.position;
 
-        X = forceDirection.x;       // Distance to travel along X : Space traveled @ time t
+
+        X = forceDirection.x;          // Distance to travel along X : Space traveled @ time t
         Y = forceDirection.y;       // Distance to travel along Y : Space traveled @ time t
         Z = forceDirection.z;       // Distance to travel along Z : Space traveled @ time t
 
