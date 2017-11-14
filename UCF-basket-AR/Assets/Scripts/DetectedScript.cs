@@ -44,7 +44,7 @@ public class DetectedScript : MonoBehaviour, ITrackableEventHandler
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().canSwipe = true;
                 InfoText.text = "";
 
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().initialTarget = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().net.transform.position;
+                //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().initialTarget = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().net.transform.position;
             }
             else
             {

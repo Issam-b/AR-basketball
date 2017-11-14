@@ -62,12 +62,13 @@ public class GameController : MonoBehaviour {
     float _timeStartThrust = 0f;                    /* Time the thrust force has been applied */
 
     bool _shootCompleted = false;               /* Register if the shoot has taken place */
-    public Vector3 initialTarget;
+    public Vector3 initialTarget = Vector3.zero;
 
     public float angleDiff; 
 
     private void Start()
     {
+        initialTarget = net.transform.position;
 
         resultsPanel.SetActive(false);
         player = StartScreen.player;
@@ -233,9 +234,9 @@ public class GameController : MonoBehaviour {
 
         //net.transform.position = new Vector3(initialTarget.x, net.transform.position.y, net.transform.position.z);
         if (Mathf.Abs(angleDiff) < 45f & Mathf.Abs(angleDiff) > 0f)
-            net.transform.position = new Vector3(initialTarget.x + (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+            net.transform.position = new Vector3(initialTarget.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
         else
-            net.transform.position = new Vector3(initialTarget.x + 10.4f - ((90 - angleDiff) * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+            net.transform.position = new Vector3(initialTarget.x - 10.4f + ((90 - angleDiff) * 10.4f / 45), net.transform.position.y, net.transform.position.z);
 
         //if (angleDiff < 45f & angleDiff > 0)
         // net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
