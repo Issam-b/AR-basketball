@@ -232,11 +232,11 @@ public class GameController : MonoBehaviour {
         angleDiff = - Vector3.SignedAngle(ball.transform.right, -net.transform.right, gameObject.transform.up);
         Debug.Log(angleDiff);
 
-        //net.transform.position = new Vector3(initialTarget.x, net.transform.position.y, net.transform.position.z);
-        if (Mathf.Abs(angleDiff) < 45f & Mathf.Abs(angleDiff) > 0f)
-            net.transform.position = new Vector3(initialTarget.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
-        else
-            net.transform.position = new Vector3(initialTarget.x - 10.4f + ((90 - angleDiff) * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+        ////net.transform.position = new Vector3(initialTarget.x, net.transform.position.y, net.transform.position.z);
+        //if (Mathf.Abs(angleDiff) < 45f & Mathf.Abs(angleDiff) > 0f)
+        //    net.transform.position = new Vector3(initialTarget.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
+        //else
+        //    net.transform.position = new Vector3(initialTarget.x - 10.4f + ((90 - angleDiff) * 10.4f / 45), net.transform.position.y, net.transform.position.z);
 
         //if (angleDiff < 45f & angleDiff > 0)
         // net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);

@@ -42,8 +42,8 @@ public class Player {
         playerGameDone = reference.Child(this.PlayerId).Child("GameDone");
 
         questionsRef = reference.Child("Questions");
-        playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
-        playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
+        playerAns1 = reference.Child(this.PlayerId);
+        playerAns2 = reference.Child(this.PlayerId);
 
         InitStats();
         FetchQuests();
