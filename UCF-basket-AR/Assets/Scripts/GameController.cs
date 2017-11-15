@@ -334,7 +334,7 @@ public class GameController : MonoBehaviour {
         }
     }
     // lose mode julien
-    public void LoseModeJ ()
+    public void LoseModeJ()
     {
         int ran2 = (int)(Random.value * 3);
         float alpha = distanceZ / distanceY;
@@ -347,8 +347,8 @@ public class GameController : MonoBehaviour {
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.7f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.65f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.7f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.65f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.7f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.65f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.7f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.65f)) * speed);
             }
             if (ran2 == 2)
             {
@@ -365,13 +365,13 @@ public class GameController : MonoBehaviour {
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.75f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.75f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.75f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.75f)) * speed);
             }
             if (ran2 == 2)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.95f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.73f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.95f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.58f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.85f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 4) * 0.58f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 4) * 0.85f)) * speed);
             }
         }
         if (alpha > 3.5f)
@@ -383,8 +383,8 @@ public class GameController : MonoBehaviour {
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 2.5f) * 1.5f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 2.5f) * 0.7f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 2.5f) * 1.5f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 2.5f) * 0.7f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 2.5f) * 1.5f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 2.5f) * 0.7f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 2.5f) * 1.5f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 2.5f) * 0.7f)) * speed);
             }
             if (ran2 == 2)
             {
@@ -401,49 +401,49 @@ public class GameController : MonoBehaviour {
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.62f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.95f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.62f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.95f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.6f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.6f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
             }
             if (ran2 == 2)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.62f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.15f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.62f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.15f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.48f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.95f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.48f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.95f)) * speed);
             }
         }
         if (alpha < 2f && alpha > 1.5f)
         {
             if (ran2 == 0)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.87f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.87f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.57f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.57f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.67f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.67f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.0f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.61f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.61f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
             }
             if (ran2 == 2)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.67f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.3f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.67f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.3f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.57f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.57f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
             }
         }
         if (alpha < 1.5f)
         {
             if (ran2 == 0)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.98f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.98f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 1.18f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.7f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 1.18f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.7f)) * speed);
             }
             if (ran2 == 1)
             {
-                ball.AddForce(new Vector3(distanceX * (12) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (12) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (15) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (15) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 0.8f)) * speed);
             }
             if (ran2 == 2)
             {
-                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.1f)) * speed);
-                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.78f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.1f)) * speed);
+                ball.AddForce(new Vector3(distanceX * (2) * 0.2f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.58f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.1f)) * speed);
+                ball.AddTorque(new Vector3(distanceX * (2) * 7.1f, (distanceY + distanceZ) * Mathf.Cos(Mathf.PI / 6) * 0.58f, ((distanceY + distanceZ) * Mathf.Sin(Mathf.PI / 6) * 1.1f)) * speed);
             }
         }
     }
