@@ -28,12 +28,19 @@ public class Player {
         this.reference = FirebaseDatabase.DefaultInstance.RootReference;
         this.PlayerId = PlayerId;
         player = reference.Child(this.PlayerId);
-        playerStats = reference.Child(this.PlayerId).Child("GameStats");
-        playerScore = reference.Child(this.PlayerId).Child("GameStats").Child("Score");
-        playerTime = reference.Child(this.PlayerId).Child("GameStats").Child("Time");
-        playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
-        playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("WinOn");
-        playerGameDone = reference.Child(this.PlayerId).Child("GameStats").Child("GameDone");
+        //playerStats = reference.Child(this.PlayerId).Child("GameStats");
+        //playerScore = reference.Child(this.PlayerId).Child("GameStats").Child("Score");
+        //playerTime = reference.Child(this.PlayerId).Child("GameStats").Child("Time");
+        //playerThrows = reference.Child(this.PlayerId).Child("GameStats").Child("Throws");
+        //playerCheatOn = reference.Child(this.PlayerId).Child("GameStats").Child("WinOn");
+        //playerGameDone = reference.Child(this.PlayerId).Child("GameStats").Child("GameDone");
+        playerStats = reference.Child(this.PlayerId);
+        playerScore = reference.Child(this.PlayerId).Child("Score");
+        playerTime = reference.Child(this.PlayerId).Child("Time");
+        playerThrows = reference.Child(this.PlayerId).Child("Throws");
+        playerCheatOn = reference.Child(this.PlayerId).Child("WinOn");
+        playerGameDone = reference.Child(this.PlayerId).Child("GameDone");
+
         questionsRef = reference.Child("Questions");
         playerAns1 = reference.Child(this.PlayerId).Child("Answers1");
         playerAns2 = reference.Child(this.PlayerId).Child("Answers2");
@@ -84,13 +91,13 @@ public class Player {
     public void Answer1(int qNumber, int answer)
     {
         answers[1, qNumber - 1] = answer;
-        playerAns1.Child("a" + qNumber.ToString()).SetValueAsync(answer);
+        playerAns1.Child("a1-" + qNumber.ToString()).SetValueAsync(answer);
     }
 
     public void Answer2(int qNumber, int answer)
     {
         answers[1, qNumber - 1] = answer;
-        playerAns2.Child("a" + qNumber.ToString()).SetValueAsync(answer);
+        playerAns2.Child("a2-" + qNumber.ToString()).SetValueAsync(answer);
     }
 
     public void SetScore(int value)

@@ -35,8 +35,8 @@ public class StartScreen : MonoBehaviour {
     // For start survey button
     public void StartSurvey ()
     {
-        player = new Player("test");
-        InvokeRepeating("FirstQuestion", 1, 1);
+        //player = new Player("test");
+        //InvokeRepeating("FirstQuestion", 1, 1);
 
         userName = userNameText.text;
         if (userName != "")
@@ -67,7 +67,7 @@ public class StartScreen : MonoBehaviour {
             survey1.SetActive(true);
             
             // TODO:change this for development only
-            StartGame();
+            //StartGame();
             CancelInvoke("FirstQuestion");
 
         }

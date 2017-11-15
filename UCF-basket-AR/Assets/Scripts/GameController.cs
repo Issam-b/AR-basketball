@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 public class GameController : MonoBehaviour {
 
-    public const int gameTime = 60; 
+    public const int gameTime = 180; 
     private Vector3 InitialTouchPosition, FinalTouchPosition;
     private float XaxisForce, YaxisForce;
     private int ballCount = 0;
@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour {
     float _timeStartThrust = 0f;                    /* Time the thrust force has been applied */
 
     bool _shootCompleted = false;               /* Register if the shoot has taken place */
-    public Vector3 initialTarget = Vector3.zero;
+    public Vector3 initialTarget;
 
     public float angleDiff; 
 
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour {
 
         resultsPanel.SetActive(false);
         player = StartScreen.player;
-        timeText.text = "Time: 5:00.0";
+        timeText.text = "Time: 3:00.0";
 
         //
         _startPosition = ball.transform.localPosition;               // Save shot start position
