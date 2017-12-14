@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour {
     string minutes, seconds;
     private bool redTime = false, isRed = false;
 
-
     public Rigidbody ball;
     public Transform imageTarget;
     public float speed = 0.5f;
@@ -24,68 +23,13 @@ public class GameController : MonoBehaviour {
 
     private float distanceX, distanceY, distanceZ;
     public AudioSource DoneSound;
-
     private Player player;
-
-    public GameObject net;
-
-    [Range(10f, 80f)]
-    public float angle = 45f;
-
-
-    
-
-    [SerializeField]
-    public float _time = 3f;                                /* The time of the travel */
-
-    [SerializeField]
-    public bool _repeat = true;                             /* If true, the program will keep on shot */
-
-    [SerializeField]
-    public Vector3 _startVelocity = new Vector3(0, 0, 0);   /* The start velocity to be applied to the shot object before the shoot */
-
-    [SerializeField]
-    public Vector3 _speed = Vector3.zero;                   /* Shows the speed during the shoot */
-
-    [SerializeField]
-    public float _elapsed = 0f;                             /* Time elapsed from the starting of the shoot */
-
-    public delegate void OnHitActionHandler();              /* Delegate function to be called when target hit */
-    public static event OnHitActionHandler OnHit;
-
-    //Rigidbody ball;                               /* Rigidbody of the shot object */
-
-    Vector3 _startPosition;                         /* Start position of the shot object */
-
-    Transform _parent;                              /* Parent object of the shot object (in case you want to to shoot the object from another moving one) */
-
-    float _timeStartThrust = 0f;                    /* Time the thrust force has been applied */
-
-    bool _shootCompleted = false;               /* Register if the shoot has taken place */
-    public Vector3 initialTarget;
-
-    public float angleDiff; 
 
     private void Start()
     {
-        initialTarget = net.transform.position;
-
         resultsPanel.SetActive(false);
         player = StartScreen.player;
-        timeText.text = "Time: 3:00.0";
-
-        //
-        _startPosition = ball.transform.localPosition;               // Save shot start position
-        //_parent = transform.parent;
-
-        //if (_repeat)
-        //{
-        //    InvokeRepeating("Reset", 1f, _time + 2.5f);
-        //}
-        //else
-       // {
-          //  Invoke("Reset", 1.5f);
-        //}
+        timeText.text = "Time: " + gameTime/60 + ":" + (gameTime - ((gameTime/60) * 60)) + ".0";
     }
 
     private void Update()
@@ -95,63 +39,10 @@ public class GameController : MonoBehaviour {
         {
             UpdateTime();
         }
-
-        //ball.transform.LookAt(net.transform);
-        //angleDiff = - Vector3.SignedAngle( ball.transform.right, - net.transform.right, gameObject.transform.up);
-        //Debug.Log(angleDiff);
-        //
-        //if (_shootCompleted) _elapsed = Time.time - _timeStartThrust;
-        //_speed = ball.velocity;
     }
 
-    public void Reset()
-    {
-
-        //transform.parent = _parent;
-        //_shootCompleted = false;
-        ball.useGravity = false;
-        ball.isKinematic = true;                  // Avoid bounces on the ground before the shooting begin
-        ball.transform.position = _startPosition;
-
-        //ApplyStartVelocity();
-        Invoke("ApplyThrust", 1.5f);
-
-    }
-
-    public void ApplyStartVelocity()
-    {
-        //ball.useGravity = true;
-        ball.isKinematic = false;
-
-        ball.AddForce(Vector3.right * _startVelocity.x, ForceMode.VelocityChange);
-        ball.AddForce(Vector3.up * _startVelocity.y, ForceMode.VelocityChange);
-        ball.AddForce(Vector3.forward * _startVelocity.z, ForceMode.VelocityChange);
-
-    }
-
-   
-
-
-    void OnCollisionEnter(Collision c)
-    {
-
-        // Logic for Target Hit
-
-        if (!_shootCompleted)
-            return;
-
-        if (c.gameObject.name == net.name)
-        {
-
-            if (OnHit != null)
-                OnHit();
-
-        }
-
-
-    }
-
-    public void OnTouchDown ()
+    // on touch release to throw the ball
+    public void OnTouchDown()
     {
         if (canSwipe)
         {
@@ -159,7 +50,8 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void OnTouchUp ()
+    // On first touch of screen to throw the ball
+    public void OnTouchUp()
     {
         if (canSwipe)
         {
@@ -171,114 +63,26 @@ public class GameController : MonoBehaviour {
             UpdateThrows();
         }
     }
-
+    // decison on throwing the ball
     private void BallThrow()
     {
-        //
+        // get distance of swiping the ball
         distanceX = Mathf.Abs(imageTarget.GetChild(3).GetChild(2).transform.position.x - ball.transform.position.x);
         distanceY = Mathf.Abs(imageTarget.GetChild(3).GetChild(2).transform.position.y - ball.transform.position.y);
         distanceZ = Mathf.Abs(imageTarget.GetChild(3).GetChild(2).transform.position.z - ball.transform.position.z);
-        //
+       
+        // calculate the difference to be used for force of throwing ball
         XaxisForce = FinalTouchPosition.x - InitialTouchPosition.x;
         YaxisForce = FinalTouchPosition.y - InitialTouchPosition.y;
         ball.useGravity = true;
         ball.isKinematic = false;
 
-        //GameModes();
-
+        // ball throwing calculation according to the mode
         GameModes();
-
-        // Lose mode
-        //if (!player.GetWinOn())
-        //{
-        //    LoseMode();
-        //}
-
-        // Win mode
-        //if (player.GetWinOn())
-        //{
-        //    WinMode();
-        //}
-
-        //ball.AddForce(new Vector3(0.1f, 0.1f, 0.1f));
-        //FireCannonAtPoint(net.transform.position);
-
-        //Normal Game
-        //NormalMode();
 
         canSwipe = false;
         ball.transform.SetParent(imageTarget, true);
     }
-
-    public void ApplyThrust()
-    {
-
-        float X;
-        float Y;
-        float Z;
-        float X0;
-        float Y0;
-        float Z0;
-        float V0x;
-        float V0y;
-        float V0z;
-        float t;
-
-
-        ball.isKinematic = false;
-        ball.useGravity = true;
-
-        // get angle
-        angleDiff = - Vector3.SignedAngle(ball.transform.right, -net.transform.right, gameObject.transform.up);
-        Debug.Log(angleDiff);
-
-        ////net.transform.position = new Vector3(initialTarget.x, net.transform.position.y, net.transform.position.z);
-        //if (Mathf.Abs(angleDiff) < 45f & Mathf.Abs(angleDiff) > 0f)
-        //    net.transform.position = new Vector3(initialTarget.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
-        //else
-        //    net.transform.position = new Vector3(initialTarget.x - 10.4f + ((90 - angleDiff) * 10.4f / 45), net.transform.position.y, net.transform.position.z);
-
-        //if (angleDiff < 45f & angleDiff > 0)
-        // net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
-        //else if (angleDiff < 0 & angleDiff > -45f)
-        //net.transform.position = new Vector3(net.transform.position.x - (angleDiff * 10.4f / 45), net.transform.position.y, net.transform.position.z);
-
-
-        Vector3 forceDirection = net.transform.position - ball.transform.position;
-
-
-        X = forceDirection.x;          // Distance to travel along X : Space traveled @ time t
-        Y = forceDirection.y;       // Distance to travel along Y : Space traveled @ time t
-        Z = forceDirection.z;       // Distance to travel along Z : Space traveled @ time t
-
-        // As we calculate in this very moment the distance between the shot object and the target, the intial space coordinates X0, Y0, Z0 will be always 0.
-        X0 = 0;
-        Y0 = 0;
-        Z0 = 0;
-
-        //transform.parent = null;        // Detach the shot object from parent in order to get its own velocity
-
-        t = _time;
-
-        // Calculation of the required velocity along each axis to hit the target from the current starting position as if the shot object were stopped 
-        V0x = (X - X0) / t;
-        V0z = (Z - Z0) / t;
-        V0y = (Y - Y0 + (0.5f * Mathf.Abs(Physics.gravity.magnitude) * Mathf.Pow(t, 2))) * 1.06f / t;
-
-        /* Subtraction of the current velocity of the shot object */
-        V0x -= ball.velocity.x;
-        V0y -= ball.velocity.y;
-        V0z -= ball.velocity.z;
-
-        ball.AddForce(Vector3.right * V0x, ForceMode.VelocityChange); // VelocityChange Add an instant velocity change to the rigidbody, applying an impulsive force, ignoring its mass.
-        ball.AddForce(Vector3.up * V0y, ForceMode.VelocityChange);
-        ball.AddForce(Vector3.forward * V0z, ForceMode.VelocityChange);
-
-        _timeStartThrust = Time.time;
-        _shootCompleted = true;
-
-    }
-
 
     // all modes
     public void GameModes()
@@ -287,53 +91,26 @@ public class GameController : MonoBehaviour {
         int ran = (int)(Random.value * 10);
         if (ran == 5)
         {
-            ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
-            ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
+            NormalMode();
         }
 
         else
         {
             // Lose mode
-            if (!player.GetWinOn())
+            if (player.GetGameMode() == 2)
             {
                 LoseModeJ();
             }
 
             // Win mode
-            if (player.GetWinOn())
-            {
-                ApplyThrust();
-            }
-        }
-    }
-
-    // all modes julien
-    public void GameModesJ()
-    {
-        //Normal Game
-        int ran = (int)(Random.value * 10);
-        if (ran == 5)
-        {
-            ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
-            ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
-        }
-
-        else
-        {
-            // Lose mode
-            if (!player.GetWinOn())
-            {
-                LoseModeJ();
-            }
-
-            // Win mode
-            if (player.GetWinOn())
+            if (player.GetGameMode() == 1)
             {
                 WinModeJ();
             }
         }
     }
-    // lose mode julien
+
+    // lose mode calculations
     public void LoseModeJ()
     {
         int ran2 = (int)(Random.value * 3);
@@ -448,10 +225,9 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    // win mode julien
+    // win mode calculations
     public void WinModeJ ()
     {
-        //ball.transform.LookAt(net.transform);
         float alpha = distanceZ / distanceY;
         if (alpha > 3f && alpha < 3.5f)
         {
@@ -485,98 +261,14 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    // Lose mode
-    public void LoseMode ()
-    {
-        ball.AddForce(new Vector3(distanceX * (4) * 0.2f, distanceY * (15.5f) * 0.1f, distanceZ * (2.8f) * 0.2f) * speed);
-        ball.AddTorque(new Vector3(distanceX * (4) * 7.1f, distanceY * (15.5f) * 7f, distanceZ * (2.8f) * 4.3f) * speed);
-    }
-
-    // Win mode
-    public void WinMode()
-    {
-        ball.AddForce(new Vector3(distanceX * (6) * 0.2f, distanceY * (25.5f) * 0.1f, distanceZ * (5) * 0.2f) * speed);
-        ball.AddTorque(new Vector3(distanceX * (5) * 7.1f, distanceY * (20.5f) * 7f, distanceZ * (2) * 4.3f) * speed);
-        //ball.AddForce(new Vector3(distanceX * (5) * 0.2f, distanceY * (20.5f) * 0.1f, distanceZ * (2) * 0.2f) * speed);
-        //ball.AddTorque(new Vector3(distanceX * (5) * 7.1f, distanceY * (20.5f) * 7f, distanceZ * (2) * 4.3f) * speed);
-    }
-
+    // Normal mode calculations
     public void NormalMode ()
     {
-
-        //// source and target positions
-        //Vector3 pos = ball.position;
-        //Vector3 target = net.transform.position;
-
-        //// distance between target and source
-        //float dist = Vector3.Distance(pos, target);
-
-        //// rotate the object to face the target
-        //ball.transform.LookAt(target);
-
-        //// calculate initival velocity required to land the cube on target using the formula (9)
-        //float Vi = Mathf.Sqrt(dist * -Physics.gravity.y / (Mathf.Sin(Mathf.Deg2Rad * _angle * 2)));
-        //float Vy, Vz;   // y,z components of the initial velocity
-
-        //Vy = Vi * Mathf.Sin(Mathf.Deg2Rad * _angle);
-        //Vz = Vi * Mathf.Cos(Mathf.Deg2Rad * _angle);
-
-        //// create the velocity vector in local space
-        //Vector3 localVelocity = new Vector3(0f, Vy, Vz);
-
-        //// transform it to global vector
-        //Vector3 globalVelocity = ball.transform.TransformVector(localVelocity);
-
-        //// launch the cube by setting its initial velocity
-        //ball.velocity = globalVelocity;
-
-        //2
-        //Vector3 vector = CalculateTrajectoryVelocity(ball.transform.position, net.transform.position, 1);
-        //ball.velocity = vector;
-
-
-        //ball.AddForce(ball.transform.forward * 200, ForceMode.Impulse);
-
-        //ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
-        //ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
+        ball.AddForce(new Vector3(XaxisForce * 0.2f, YaxisForce * 0.1f, YaxisForce * 0.2f) * speed);
+        ball.AddTorque(new Vector3(XaxisForce * 7.1f, YaxisForce * 7f, YaxisForce * 4.3f) * speed);
     }
 
-    
-    private void FireCannonAtPoint(Vector3 point)
-    {
-
-        var velocity = BallisticVelocity(point, angle);
-        Debug.Log("Firing at " + point + " velocity " + velocity);
-
-        //ball.transform.position = transform.position;
-        ball.velocity = velocity;
-    }
-
-    private Vector3 BallisticVelocity(Vector3 destination, float angle)
-    {
-        Vector3 dir = destination - transform.position; // get Target Direction
-        float height = dir.y; // get height difference
-        dir.y = 0; // retain only the horizontal difference
-        float dist = dir.magnitude; // get horizontal direction
-        float a = angle * Mathf.Deg2Rad; // Convert angle to radians
-        dir.y = dist * Mathf.Tan(a); // set dir to the elevation angle.
-        dist += height / Mathf.Tan(a); // Correction for small height differences
-
-        // Calculate the velocity magnitude
-        float velocity = Mathf.Sqrt(dist * Physics.gravity.magnitude / Mathf.Sin(2 * a));
-        return velocity * dir.normalized; // Return a normalized vector.
-    }
-
-
-    Vector3 CalculateTrajectoryVelocity(Vector3 origin, Vector3 target, float t)
-    {
-        float vx = (target.x - origin.x) / t;
-        float vz = (target.z - origin.z) / t;
-        float vy = ((target.y - origin.y) - 0.5f * Physics.gravity.y * t * t) / t;
-        return new Vector3(vx, vy, vz);
-    }
-
-
+    // Update UI and DB with current score
     public void UpdateScore()
     {
         int currentScore = player.GetScore();
@@ -584,18 +276,19 @@ public class GameController : MonoBehaviour {
         scoreText.text = "Score: " + (currentScore + 1).ToString();
     }
 
+    // update UI & DB with number of throws
     public void UpdateThrows()
     {
         ballCountText.text = "Throws: " + ballCount.ToString();
         player.SetThrows(ballCount);
     }
 
+    // update UI & DB with the time counter
     public void UpdateTime()
     {
         if (ballCount != 0)
         {
             temp = gameTime - (Time.time - startTime);
-            //Debug.Log(temp);
             if (temp <= 10 && !redTime)
             {
                 InvokeRepeating("RedTimer", 0, 0.25f);
@@ -616,13 +309,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    // Show summary of game and results at end of game
     public void GameResults(string userName, int score)
     {
         resultsPanel.SetActive(true);
         resultsText.text = "Your time is UP ! \n\nUsername: " + Regex.Replace(userName, @"[^a-zA-Z]", "") + "\nScore: " + score;
-                            //resultsText.text = "Your time is UP ! \n\nUsername: " + player.GetPlayerId() + "\nScore: " +
-                            //player.GetScore() + "\nTime: " + player.GetTime() +
-                            //"\nNumber of throws: " + player.GetThrows();
     }
 
     // blink red timer
@@ -641,13 +332,9 @@ public class GameController : MonoBehaviour {
         
 
     }
+
     public void EndSurvey ()
     {
         SceneManager.LoadScene(2);
-    }
-
-    public void WinToggle (bool state)
-    {
-            player.SetWinOn(state);
     }
 }

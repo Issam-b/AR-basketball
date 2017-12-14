@@ -3,7 +3,6 @@
 
 public class Basketball : MonoBehaviour {
 
-    //private Vector3 InitialPosition;
     private GameController gameController;
     public float threshHold = 4;
     Transform cameraTransform;
@@ -15,23 +14,13 @@ public class Basketball : MonoBehaviour {
     {
         this.GetComponent<Rigidbody>().useGravity = false;
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        //InitialPosition = this.transform.position;
         ResetPositionCamera();
         player = StartScreen.player;
     }
 
-    private void Update()
-    {
-        //distanceZ = Mathf.Abs(imageTarget.Find("Basketball_hoop").Find("NET").position.z - Camera.main.transform.position.z) / 100;
-        //distanceY = Mathf.Abs(imageTarget.Find("Basketball_hoop").Find("NET").position.y - Camera.main.transform.position.y) / 25;
-        //DistanceY.text = "Distance Y: " + distanceY.ToString("f2") + "m";
-        //DistanceZ.text = "Distance Z: " + distanceZ.ToString("f0") + "m";
-    }
-
+    // reset the ball position relative to the AR camera
     public void ResetPositionCamera()
     {
-        //gameController.initialTarget = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().net.transform.position;
-
         offset = new Vector3(0.5f + Random.Range(-threshHold, threshHold), -9f, 17.3f);
         cameraTransform = Camera.main.transform;
 
@@ -48,6 +37,7 @@ public class Basketball : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        // collision handling and sound triggering of the ball with other objects
         if (other.gameObject.tag == "Ring")
         {
             gameController.UpdateScore();
@@ -63,15 +53,12 @@ public class Basketball : MonoBehaviour {
             }
             else if (player.GetGameDone())
             {
-                //GameController.resultsPanel.SetActive(true);
                 gameController.GameResults(player.GetPlayerId(), player.GetScore());
                 DoneSound.Play();
             }
         }
         else
         {
-            //gameController.ball.velocity = Vector3.zero;
-            //gameController.ball.isKinematic = true;
             bounceSound.Play();
         }
     }

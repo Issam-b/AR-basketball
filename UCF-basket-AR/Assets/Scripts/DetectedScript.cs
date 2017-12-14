@@ -10,11 +10,8 @@ public class DetectedScript : MonoBehaviour, ITrackableEventHandler
     public Text InfoText;
     private TrackableBehaviour mTrackableBehaviour;
     private Player player;
-    //private Basketball ball;
-
-    //TODO: fix the ball not reseting by creating a bigger second boundary
+   
     void Start () {
-        //ball = ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Basketball>();
         player = StartScreen.player;
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)

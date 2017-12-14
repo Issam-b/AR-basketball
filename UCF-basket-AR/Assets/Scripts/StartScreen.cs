@@ -13,12 +13,14 @@ public class StartScreen : MonoBehaviour {
     private int answer;
     private int qNumber = 1;
     private int waited = 0;
-    public GameObject login, survey1, startGame;
+    public GameObject login, survey1, startGame, GameMode;
     public ToggleGroup RateToggleGroup;
     public Button nextButton;
     public Button startGameButton;
     public Text questionText;
     public Text userNameText;
+    private int gameMode = 1;
+    private string[] modes = new string[] { "Win", "Lose", "Normal" };
 
 
     public void Start()
@@ -27,6 +29,24 @@ public class StartScreen : MonoBehaviour {
         RateToggles = survey1.GetComponentsInChildren<Toggle>();
 
         // Activate username view
+        GameMode.SetActive(true);
+        login.SetActive(false);
+        survey1.SetActive(false);
+        startGame.SetActive(false);
+    }
+
+    // Set game mode
+    public void SetGameMode(int choice)
+    {
+        gameMode = choice + 1;
+        Debug.Log("Game mode: " + modes[gameMode]);
+    }
+
+    // Go to the game
+    public void GoGame()
+    {
+        // Activate username view
+        GameMode.SetActive(false);
         login.SetActive(true);
         survey1.SetActive(false);
         startGame.SetActive(false);
@@ -35,9 +55,6 @@ public class StartScreen : MonoBehaviour {
     // For start survey button
     public void StartSurvey ()
     {
-        //player = new Player("test");
-        //InvokeRepeating("FirstQuestion", 1, 1);
-
         userName = userNameText.text;
         if (userName != "")
         {
@@ -49,6 +66,8 @@ public class StartScreen : MonoBehaviour {
             player = new Player(userName);
             Debug.Log("Created player object: " + player);
 
+            // set game mode
+            player.SetGameMode(gameMode);
             // get first question
             InvokeRepeating("FirstQuestion", 1, 1);
 
@@ -65,18 +84,13 @@ public class StartScreen : MonoBehaviour {
             FetchNextQuestion(1);
             login.SetActive(false);
             survey1.SetActive(true);
-            
-            // TODO:change this for development only
-            //StartGame();
             CancelInvoke("FirstQuestion");
-
         }
     }
 
     // For next question button
     public void NextButton ()
     {
-        
         if (RateToggleGroup.AnyTogglesOn() && qNumber < Player.QuestsNumber)
         {
             // Get active toggle value
@@ -116,11 +130,11 @@ public class StartScreen : MonoBehaviour {
 
     public void FetchNextQuestion (int qNumber)
     {
-        string temp = questionText.text;
+        string previousQuest = questionText.text;
         // Check if current questions is the same
-        if (temp != player.GetQuestion(qNumber))
+        if (previousQuest != player.GetQuestion(qNumber))
         {
-            temp = player.GetQuestion(qNumber);
+            previousQuest = player.GetQuestion(qNumber);
             // load question
             questionText.text = player.GetQuestion(qNumber);
         }
