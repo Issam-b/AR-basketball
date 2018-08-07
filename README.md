@@ -4,4 +4,5 @@ Ubiquitous Computing Fundamentals project that consists of an Augmented Reality 
 ![Game view](images/image1.png?raw=true "Game view")
 
 Watch the game play
+
 [![Focus app demo](https://img.youtube.com/vi/RyJciOyBMpM/0.jpg)](https://www.youtube.com/watch?v=RyJciOyBMpM)
